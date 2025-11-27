@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color Palette */
+  --color-cacao: #8B6F5A;
+  --color-sandstone: #ECE2D5;
+  --color-beige-light: #F6EFE7;
+  --color-card-bg: #F1E6D7;
+  --color-dark-brown: #4A3E36;
+  --color-soft-gold: #C9A072;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+  html {
+    /* Smooth scroll removed for multi-page navigation */
+  }
+
+  body {
+    @apply font-sans text-dark-brown bg-beige-light antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-tight font-medium text-dark-brown;
+  }
+
+  h1 {
+    @apply font-semibold;
+  }
+
+  h2,
+  h3 {
+    @apply font-medium;
+  }
+
+  p,
+  a,
+  li,
+  span,
+  button,
+  input,
+  textarea,
+  label {
+    @apply font-sans font-normal;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+    /* Increased spacing for "ruim" feel */
+  }
+
+  .btn-primary {
+    @apply inline-block bg-dark-brown text-beige-light px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-cacao hover:shadow-soft text-center cursor-pointer hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-transparent border-2 border-dark-brown text-dark-brown px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-dark-brown hover:text-beige-light text-center cursor-pointer hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-card-bg p-8 rounded-xl shadow-soft transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-cacao focus:border-transparent outline-none transition-all bg-white/50 focus:bg-white;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
