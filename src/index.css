@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color Palette */
-  --color-cacao: #8B6F5A;
-  --color-sandstone: #ECE2D5;
-  --color-beige-light: #F6EFE7;
-  --color-card-bg: #F1E6D7;
-  --color-dark-brown: #4A3E36;
+  /* Color Palette - Aangepast naar schermafbeelding */
+  --color-cacao: #5D4A3C;
+  --color-sandstone: #F5EDE4;
+  --color-beige-light: #FAF6F1;
+  --color-card-bg: #FFFFFF;
+  --color-dark-brown: #5D4A3C;
   --color-soft-gold: #C9A072;
 
   /* Typography */
@@ -75,7 +75,8 @@
   }
 
   .card {
-    @apply bg-card-bg p-8 rounded-xl shadow-soft transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply bg-card-bg p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
   .input-field {
