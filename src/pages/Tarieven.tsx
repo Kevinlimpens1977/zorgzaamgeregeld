@@ -1,4 +1,4 @@
-import { Ticket, Sparkles, Check, Car, Clock, Calendar, CreditCard } from 'lucide-react';
+import { Ticket, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PricingCard from '../components/PricingCard';
 import { useState } from 'react';
@@ -84,8 +84,8 @@ const Tarieven = () => {
             {/* Additional Options & Info */}
             <section className="section-padding bg-cream-bg">
                 <div className="container-custom">
-                     <div className="max-w-4xl mx-auto text-center mb-16">
-                         <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast">
+                    <div className="max-w-4xl mx-auto text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast">
                             Flexibele Mogelijkheden
                         </h2>
                     </div>
@@ -93,33 +93,33 @@ const Tarieven = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {/* Maatwerk */}
                         <div className="text-center">
-                             <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
+                            <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
                                 <Sparkles size={32} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-2xl font-serif text-dark-contrast mb-2">Maatwerk</h3>
                             <p className="text-dark-contrast/70 mb-6">
                                 Iedere situatie is uniek. We stellen samen een pakket op dat perfect aansluit bij uw wensen.
                             </p>
-                             <Link to="/contact" className="btn-secondary">
+                            <Link to="/contact" className="btn-secondary">
                                 Bespreek uw wensen
                             </Link>
                         </div>
-                        
+
                         {/* Strippenkaart */}
                         <div className="text-center">
-                             <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
+                            <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
                                 <Ticket size={32} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-2xl font-serif text-dark-contrast mb-2">Strippenkaart</h3>
                             <p className="text-dark-contrast/70 mb-6">
                                 Voor regelmatige ondersteuning met korting. Koop 10 uur en bespaar op het uurtarief.
                             </p>
-                             <Link to="/contact" className="btn-secondary">
+                            <Link to="/contact" className="btn-secondary">
                                 Bestel een kaart
                             </Link>
                         </div>
                     </div>
-                    
+
                     <div className="border-t border-light-gray my-20"></div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -127,15 +127,15 @@ const Tarieven = () => {
                             <h4 className="text-xl font-serif text-dark-contrast mb-2">Reiskosten</h4>
                             <p className="text-dark-contrast/70">€0,23/km buiten een straal van 10km.</p>
                         </div>
-                         <div>
+                        <div>
                             <h4 className="text-xl font-serif text-dark-contrast mb-2">Minimale Afname</h4>
                             <p className="text-dark-contrast/70">Minimaal 2 uur per afspraak.</p>
                         </div>
-                         <div>
+                        <div>
                             <h4 className="text-xl font-serif text-dark-contrast mb-2">Annulering</h4>
                             <p className="text-dark-contrast/70">Kosteloos tot 24 uur van tevoren.</p>
                         </div>
-                         <div>
+                        <div>
                             <h4 className="text-xl font-serif text-dark-contrast mb-2">Betaling</h4>
                             <p className="text-dark-contrast/70">Per factuur of direct via PGB.</p>
                         </div>
