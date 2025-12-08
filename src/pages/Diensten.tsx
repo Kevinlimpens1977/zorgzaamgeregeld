@@ -101,8 +101,8 @@ const Diensten = () => {
                         {services.map((service, index) => (
                             <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
                                 <div className="md:col-span-1 text-center md:text-left">
-                                    <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
-                                        {service.icon}
+                                    <div className="mb-5">
+                                        <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                                     </div>
                                     <h2 className="text-3xl font-serif text-dark-contrast">
                                         {service.title}
@@ -115,7 +115,7 @@ const Diensten = () => {
                                     <ul className="space-y-2">
                                         {service.details.slice(0, 4).map((detail, idx) => ( // Show first 4
                                             <li key={idx} className="flex items-center">
-                                                <Check size={18} className="text-gold-accent mr-3 flex-shrink-0" />
+                                                <span className="w-2 h-2 rounded-full bg-gold mr-3 flex-shrink-0 mt-2"></span>
                                                 <span className="text-dark-contrast/70">{detail}</span>
                                             </li>
                                         ))}
@@ -126,12 +126,12 @@ const Diensten = () => {
                     </div>
                 </div>
             </section>
-            
+
             {/* PGB Info Section */}
             <section className="section-padding bg-cream-bg">
                 <div className="container-custom max-w-4xl text-center">
-                     <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
-                        <Euro size={40} strokeWidth={1.5} />
+                    <div className="mb-5">
+                        <div className="w-4 h-4 rounded-full bg-gold inline-block"></div>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
                         Financiering via PGB

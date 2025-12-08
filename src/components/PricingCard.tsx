@@ -33,7 +33,7 @@ const PricingCard = ({
     const buttonClasses = isSelected
         ? 'bg-nav-text text-background'
         : 'bg-transparent text-nav-text border border-nav-text';
-        
+
     const animationClass = isSelected ? 'animate-wiggle' : '';
 
     return (
@@ -42,7 +42,7 @@ const PricingCard = ({
             onClick={onSelect}
         >
             {highlighted && (
-                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-1 border-2 border-gold-accent rounded-md">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-1 border-2 border-gold-accent rounded-md">
                     <span className="text-sm font-semibold text-nav-text">Meest gekozen</span>
                 </div>
             )}
@@ -64,7 +64,7 @@ const PricingCard = ({
             <ul className="space-y-3 mb-8 flex-grow">
                 {features.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                        <Check size={18} className="mr-3 flex-shrink-0 text-nav-text" />
+                        <span className="w-2 h-2 rounded-full bg-gold mr-3 flex-shrink-0 mt-2"></span>
                         <span className="text-nav-text/80">{feature}</span>
                     </li>
                 ))}

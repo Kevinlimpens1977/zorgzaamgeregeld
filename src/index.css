@@ -15,6 +15,8 @@
   /* Bronsgoud */
   --color-gold: #A07F5A;
   /* Goud voor lijnen/iconen */
+  --color-gold-dark: #8F6F4E;
+  /* Donker goud voor hover */
 
   --color-text: #4A4A4A;
   /* Bodytekst */
@@ -70,7 +72,7 @@
   }
 
   button {
-    @apply font-btn tracking-wider uppercase text-sm font-medium;
+    @apply font-btn tracking-[0.02em] uppercase text-sm font-semibold;
   }
 }
 
@@ -85,11 +87,11 @@
 
   /* Luxe Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-champagne text-white px-8 py-4 rounded-sm transition-all duration-500 hover:bg-gold hover:shadow-lg hover:-translate-y-1;
+    @apply inline-flex items-center justify-center bg-transparent border border-gold text-title px-[36px] py-[18px] rounded-none transition-all duration-300 hover:bg-base hover:border-gold-dark;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-transparent border border-champagne text-title px-8 py-4 rounded-sm transition-all duration-500 hover:bg-champagne hover:text-white hover:border-transparent;
+    @apply inline-flex items-center justify-center bg-transparent border border-gold text-title px-[36px] py-[18px] rounded-none transition-all duration-300 hover:bg-base hover:border-gold-dark;
   }
 
   .btn-text {
@@ -112,30 +114,3 @@
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.delay-100 {
-  animation-delay: 100ms;
-}
-
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-300 {
-  animation-delay: 300ms;
-}

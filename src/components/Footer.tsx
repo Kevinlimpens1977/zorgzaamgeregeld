@@ -1,53 +1,70 @@
 import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
-    const footerNav = [
-        { name: 'Home', path: '/' },
-        { name: 'Diensten', path: '/diensten' },
-        { name: 'Over Mij', path: '/over-mij' },
-        { name: 'Contact', path: '/contact' },
-    ];
-
     return (
-        <footer className="bg-taupe text-white py-20 pb-10">
+        <footer className="bg-surface border-t border-taupe pt-[60px] pb-10">
             <div className="container-custom">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 border-b border-white/20 pb-16">
-                    <div className="basis-1/3">
-                        <Link to="/" className="text-3xl lg:text-4xl font-serif tracking-wide hover:opacity-80 transition-opacity">
-                            Zorgzaam Geregeld
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+                    {/* Column 1: Brand */}
+                    <div className="space-y-4">
+                        <Link to="/" className="block">
+                            <h2 className="text-3xl font-serif text-title">Zorgzaam Geregeld</h2>
                         </Link>
-                        <p className="mt-4 text-white/80 font-light max-w-xs">
-                            Persoonlijke ondersteuning met rust, aandacht en structuur.
+                        <p className="font-sans text-title text-lg font-light">
+                            Jouw rust in de wirwar van zorg
                         </p>
                     </div>
 
-                    <nav className="basis-1/3 flex flex-col md:flex-row gap-6 md:gap-8 text-lg font-light">
-                        {footerNav.map(item => (
+                    {/* Column 2: Navigation */}
+                    <div className="flex flex-col space-y-3">
+                        {[
+                            { name: 'HOME', path: '/' },
+                            { name: 'OVER MIJ', path: '/over-mij' },
+                            { name: 'DIENSTEN', path: '/diensten' },
+                            { name: 'ZORGCHECK', path: '/zorgcheck' },
+                            { name: 'TARIEVEN', path: '/tarieven' },
+                            { name: 'VERGOEDINGEN', path: '/vergoedingen' },
+                            { name: 'CONTACT', path: '/contact' },
+                        ].map((item) => (
                             <Link
-                                key={item.path}
+                                key={item.name}
                                 to={item.path}
-                                className="hover:text-champagne transition-colors relative group"
+                                className="font-btn font-semibold text-text tracking-wider hover:text-gold transition-colors text-sm uppercase"
                             >
                                 {item.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-champagne transition-all duration-300 group-hover:w-full"></span>
                             </Link>
                         ))}
-                    </nav>
+                    </div>
 
-                    <div className="basis-1/3 md:text-right text-lg font-light">
-                        <a href="mailto:info@zorgzaamgeregeld.nl" className="hover:text-champagne transition-colors block mb-2">
-                            info@zorgzaamgeregeld.nl
+                    {/* Column 3: Contact */}
+                    <div className="space-y-4">
+                        <a href="mailto:info@zorgzaamgeregeld.nl" className="flex items-center group">
+                            <div className="w-2 h-2 rounded-full bg-gold mr-3"></div>
+                            <span className="font-sans text-title group-hover:text-gold transition-colors">
+                                info@zorgzaamgeregeld.nl
+                            </span>
                         </a>
-                        {/* Optional: Add phone number or address here if needed */}
+                        <div className="flex items-center">
+                            <div className="w-2 h-2 rounded-full bg-gold mr-3"></div>
+                            <span className="font-sans text-title">
+                                +31 (0)6 12345678
+                            </span>
+                        </div>
+                        <div className="flex items-center">
+                            <div className="w-2 h-2 rounded-full bg-gold mr-3"></div>
+                            <span className="font-sans text-title">
+                                Regio Limburg en Brabant
+                            </span>
+                        </div>
                     </div>
                 </div>
 
-                <div className="pt-10 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm font-light">
-                    <p>&copy; {new Date().getFullYear()} Zorgzaam Geregeld.</p>
-                    <div className="flex gap-6 mt-4 md:mt-0">
-                        <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-                        <Link to="/voorwaarden" className="hover:text-white transition-colors">Algemene Voorwaarden</Link>
-                    </div>
+                {/* Bottom Bar */}
+                <div className="border-t border-taupe/30 pt-10 text-center">
+                    <p className="font-sans text-title/70 text-sm">
+                        &copy; {new Date().getFullYear()} Zorgzaam Geregeld · <Link to="/privacy" className="hover:text-title">Privacybeleid</Link> · <Link to="/voorwaarden" className="hover:text-title">Algemene Voorwaarden</Link>
+                    </p>
                 </div>
             </div>
         </footer>

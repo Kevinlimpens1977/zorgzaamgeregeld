@@ -124,10 +124,10 @@ const Quiz = () => {
             <header className="pt-40 pb-20 text-center">
                 <div className="container-custom">
                     <h1 className="text-5xl md:text-6xl font-serif text-highlight mb-4">
-                        Vind de Juiste Ondersteuning
+                        Voor ouderen, mantelzorgers en iedereen die overzicht zoekt.
                     </h1>
                     <p className="text-xl text-nav-text max-w-3xl mx-auto">
-                        Beantwoord vier korte vragen en ontdek welke dienst het beste aansluit bij uw behoeften.
+                        Deze check helpt je om de juiste hulp te kiezen. Snel en eenvoudig.
                     </p>
                 </div>
             </header>

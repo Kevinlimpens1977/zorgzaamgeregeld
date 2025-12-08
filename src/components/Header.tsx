@@ -11,7 +11,7 @@ const Header = () => {
         { name: 'Home', path: '/' },
         { name: 'Over mij', path: '/over-mij' },
         { name: 'Diensten', path: '/diensten' },
-        { name: 'Aanpak', path: '/aanpak' },
+        { name: 'Zorgcheck', path: '/zorgcheck' },
         { name: 'Tarieven', path: '/tarieven' },
         { name: 'Vergoeding', path: '/vergoeding' },
         { name: 'Contact', path: '/contact' },
@@ -31,11 +31,9 @@ const Header = () => {
                 <span className="text-gold font-serif text-sm">©{currentYear}</span>
             </div>
 
-            {/* 3. Navigation - Fixed Bottom Right */}
-            <nav className="fixed bottom-6 right-6 md:bottom-10 md:right-12 z-50 text-right">
-
-                {/* Desktop: Always visible vertical list */}
-                <ul className="hidden md:flex flex-col space-y-1">
+            {/* 3. Navigation - Desktop: Bottom Right */}
+            <nav className="fixed bottom-6 right-6 md:bottom-10 md:right-12 z-50 text-right hidden md:block">
+                <ul className="flex flex-col space-y-1">
                     {navItems.map((item) => (
                         <li key={item.path}>
                             <Link
@@ -54,18 +52,18 @@ const Header = () => {
                         </li>
                     ))}
                 </ul>
-
-                {/* Mobile: Hamburger Button at Bottom Right */}
-                <div className="md:hidden">
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="bg-base/90 p-3 rounded-full shadow-lg text-title border border-gold/20"
-                        aria-label="Menu"
-                    >
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
             </nav>
+
+            {/* Mobile: Hamburger Button at Top Left */}
+            <div className="md:hidden fixed top-6 left-6 z-50">
+                <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="bg-base/90 p-3 rounded-full shadow-lg text-title border border-gold/20"
+                    aria-label="Menu"
+                >
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
 
             {/* Mobile Menu Overlay */}
             <div

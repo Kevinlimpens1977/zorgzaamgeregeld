@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home as HomeIcon, Package, Truck, Heart } from 'lucide-react';
+import { Home as HomeIcon, Package, Truck, Heart, Sparkles } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import ReviewCarousel from '../components/ReviewCarousel';
@@ -26,18 +26,28 @@ const Home = () => {
             icon: <Truck size={28} strokeWidth={1} />,
         },
         {
-            title: "Mantelzorg & Gezelschap",
+            title: "Vervuilde woningen reinigen",
+            description: "Ook bij ernstige vervuiling pak ik het aan – zonder oordeel, met respect en professionaliteit.",
+            icon: <Sparkles size={28} strokeWidth={1} />,
+        },
+        {
+            title: "Mantelzorg-ondersteuning",
+            description: "Zorg jij voor een naaste? Ik ondersteun jou, zodat je even kunt ademhalen.",
+            icon: <Heart size={28} strokeWidth={1} />,
+        },
+        {
+            title: "Gezelschap & Aandacht",
             description: "Een luisterend oor, een wandeling of samen een kopje koffie. Persoonlijke aandacht staat voorop.",
             icon: <Heart size={28} strokeWidth={1} />,
         },
     ];
 
     return (
-        <div className="bg-base min-h-screen">
+        <div className="min-h-screen">
             <Hero />
 
             {/* Intro Section - Minimalist & Spacious */}
-            <section className="section-padding relative">
+            <section className="section-padding relative bg-base">
                 <div className="container-custom">
                     <div className="max-w-3xl mx-auto text-center space-y-8">
                         <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold">Over Zorgzaam Geregeld</span>
@@ -60,7 +70,7 @@ const Home = () => {
                         <div className="w-24 h-[1px] bg-champagne mx-auto"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <div
                                 key={index}
@@ -75,7 +85,7 @@ const Home = () => {
 
                     <div className="text-center mt-20">
                         <Link to="/diensten" className="btn-secondary">
-                            Bekijk alle diensten
+                            Meer info over mijn diensten
                         </Link>
                     </div>
                 </div>
@@ -140,15 +150,13 @@ const Home = () => {
                 <div className="container-custom text-center">
                     <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold block mb-4">Mijn Doelgroep</span>
                     <h2 className="text-3xl md:text-4xl font-serif text-title mb-12">
-                        Ondersteuning voor iedereen
+                        ik bied ondersteuning voor:
                     </h2>
 
                     <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                         {[
-                            "Mantelzorgers",
                             "Ouderen",
-                            "Drukke gezinnen",
-                            "Iedereen die rust zoekt"
+                            "Mantelzorgers"
                         ].map((item, index) => (
                             <div key={index} className="px-8 py-4 border border-surface rounded-full text-text hover:border-gold hover:text-gold hover:shadow-card hover:-translate-y-1 transition-all duration-300 cursor-default">
                                 <span className="font-light tracking-wide">{item}</span>
