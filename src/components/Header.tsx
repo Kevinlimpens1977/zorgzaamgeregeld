@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/header.png';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,15 +25,6 @@ const Header = () => {
     return (
         <>
             {/* 1. Logo - Fixed Top Left */}
-            <header className="fixed top-6 left-6 md:top-10 md:left-12 z-50">
-                <Link to="/" className="block hover:opacity-80 transition-opacity">
-                    <img
-                        src={logo}
-                        alt="Zorgzaam Geregeld"
-                        className="h-20 md:h-28 w-auto object-contain mix-blend-multiply"
-                    />
-                </Link>
-            </header>
 
             {/* 2. Copyright - Fixed Bottom Left (Hidden on small mobile to save space) */}
             <div className="fixed bottom-6 left-6 md:bottom-10 md:left-12 z-40 hidden md:block">
