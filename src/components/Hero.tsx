@@ -19,7 +19,7 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-10 container-custom text-center">
                 <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fadeIn">
-                    <span className="block text-bronze uppercase tracking-[0.3em] text-xs md:text-sm font-bold mb-4 opacity-90">
+                    <span className="block text-title uppercase tracking-[0.3em] text-xs md:text-sm font-bold mb-4 opacity-90">
                         Persoonlijke Zorg & Ondersteuning
                     </span>
 
@@ -31,7 +31,7 @@ const Hero = () => {
                         <span className="italic text-bronze">Zorgzaam Geregeld</span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-text max-w-2xl mx-auto leading-relaxed font-light">
+                    <p className="text-lg md:text-2xl text-title max-w-2xl mx-auto leading-relaxed font-light">
                         Uw partner voor rust, structuur en persoonlijke ondersteuning in het dagelijks leven.
                     </p>
 
