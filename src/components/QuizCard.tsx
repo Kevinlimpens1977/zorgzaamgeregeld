@@ -10,20 +10,20 @@ interface QuizCardProps {
 
 const QuizCard: React.FC<QuizCardProps> = ({ question, options, onSelect, currentStep, totalSteps }) => {
     return (
-        <div className="card max-w-2xl mx-auto animate-fadeIn">
-            <div className="mb-6">
-                <span className="text-sm font-medium text-dark-brown uppercase tracking-wider">
+        <div className="bg-white p-10 rounded-xl shadow-soft max-w-3xl mx-auto animate-fadeIn">
+            <div className="mb-8 text-center">
+                <span className="text-sm font-medium text-nav-text uppercase tracking-wider">
                     Vraag {currentStep} van {totalSteps}
                 </span>
-                <div className="w-full bg-sandstone h-2 rounded-full mt-2">
+                <div className="w-full bg-nav-button h-2 rounded-full mt-2">
                     <div
-                        className="bg-dark-brown h-2 rounded-full transition-all duration-500"
+                        className="bg-nav-text h-2 rounded-full transition-all duration-500"
                         style={{ width: `${(currentStep / totalSteps) * 100}%` }}
                     ></div>
                 </div>
             </div>
 
-            <h3 className="text-2xl font-serif font-bold text-dark-brown mb-8">
+            <h3 className="text-3xl font-serif text-highlight mb-8 text-center">
                 {question}
             </h3>
 
@@ -32,12 +32,12 @@ const QuizCard: React.FC<QuizCardProps> = ({ question, options, onSelect, curren
                     <button
                         key={index}
                         onClick={() => onSelect(option.value)}
-                        className="w-full text-left p-4 rounded-lg border-2 border-sandstone hover:border-dark-brown hover:bg-beige-light transition-all duration-200 group flex items-center cursor-pointer"
+                        className="w-full text-left p-5 rounded-lg border-2 border-nav-button hover:border-tile transition-all duration-200 group flex items-center cursor-pointer"
                     >
-                        <span className="w-8 h-8 rounded-full bg-sandstone text-dark-brown font-bold flex items-center justify-center mr-4 group-hover:bg-dark-brown group-hover:text-beige-light transition-colors">
+                        <span className="w-10 h-10 rounded-full bg-nav-button text-nav-text font-bold flex items-center justify-center mr-4 group-hover:bg-tile group-hover:text-white transition-colors">
                             {String.fromCharCode(65 + index)}
                         </span>
-                        <span className="text-dark-brown font-medium">{option.label}</span>
+                        <span className="text-lg text-nav-text font-medium">{option.label}</span>
                     </button>
                 ))}
             </div>

@@ -1,4 +1,3 @@
-import { Check } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 interface ServiceCardProps {
@@ -6,34 +5,27 @@ interface ServiceCardProps {
     description: string;
     icon?: ReactNode;
     features?: string[];
+    isHovered?: boolean;
 }
 
-const ServiceCard = ({ title, description, icon, features }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, isHovered }: ServiceCardProps) => {
     return (
-        <div className="card hover:scale-105 transform transition-transform duration-300">
+        <div className={`card-service h-full flex flex-col items-center text-center group ${isHovered ? 'shadow-card -translate-y-2 border-surface' : ''}`}>
             {icon && (
-                <div className="text-dark-brown mb-4 flex justify-center md:justify-start">
+                <div className="text-gold mb-6 p-4 rounded-full bg-base shadow-soft transition-transform duration-500 group-hover:scale-110">
                     {icon}
                 </div>
             )}
-            <h3 className="text-2xl font-serif font-semibold text-dark-brown mb-3">
+            <h3 className="text-2xl font-serif text-title mb-4 relative pb-4">
                 {title}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-champagne/50"></span>
             </h3>
-            <p className="text-dark-brown/80 mb-4 leading-relaxed">
+            <p className="text-text/80 leading-relaxed font-light">
                 {description}
             </p>
-            {features && features.length > 0 && (
-                <ul className="space-y-2">
-                    {features.map((feature, index) => (
-                        <li key={index} className="flex items-start">
-                            <Check size={18} className="text-dark-brown mr-2 mt-1 flex-shrink-0" />
-                            <span className="text-dark-brown/80">{feature}</span>
-                        </li>
-                    ))}
-                </ul>
-            )}
         </div>
     );
 };
 
 export default ServiceCard;
+

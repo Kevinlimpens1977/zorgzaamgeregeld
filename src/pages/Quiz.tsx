@@ -119,18 +119,18 @@ const Quiz = () => {
     const content = showResult ? getResultContent(result) : null;
 
     return (
-        <div className="bg-beige-light">
+        <div className="bg-background">
             {/* Header Section */}
-            <section className="section-padding bg-cacao text-beige-light text-center">
+            <header className="pt-40 pb-20 text-center">
                 <div className="container-custom">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-beige-light">
-                        Welke ondersteuning past bij jou?
+                    <h1 className="text-5xl md:text-6xl font-serif text-highlight mb-4">
+                        Vind de Juiste Ondersteuning
                     </h1>
-                    <p className="text-xl text-beige-light/90 max-w-2xl mx-auto">
-                        Kies 4 korte antwoorden en ontdek welk Zorgzaam Geregeld-pakket het beste past bij jouw situatie.
+                    <p className="text-xl text-nav-text max-w-3xl mx-auto">
+                        Beantwoord vier korte vragen en ontdek welke dienst het beste aansluit bij uw behoeften.
                     </p>
                 </div>
-            </section>
+            </header>
 
             {/* Quiz Section */}
             <section className="section-padding">
@@ -144,48 +144,37 @@ const Quiz = () => {
                             totalSteps={questions.length}
                         />
                     ) : (
-                        <div className="max-w-2xl mx-auto animate-fadeIn">
-                            <div className="card bg-card-bg border-2 border-sandstone relative overflow-hidden shadow-xl">
-                                <div className="absolute top-0 right-0 bg-soft-gold text-dark-brown text-xs font-bold px-4 py-2 rounded-bl-lg uppercase tracking-wider flex items-center gap-1">
-                                    <Sparkles size={14} />
-                                    {content?.tag}
+                        <div className="max-w-3xl mx-auto animate-fadeIn text-center">
+                            <div className="bg-white p-10 rounded-xl shadow-soft">
+                                <div className="inline-block p-4 bg-tile/10 rounded-full mb-6 text-nav-text">
+                                    <Sparkles size={32} strokeWidth={1.5} />
                                 </div>
-
-                                <div className="text-center p-8">
-                                    <h2 className="text-3xl font-serif font-bold text-dark-brown mb-4">
-                                        {content?.title}
-                                    </h2>
-                                    <div className="w-16 h-1 bg-dark-brown mx-auto mb-6 rounded-full opacity-20"></div>
-                                    <p className="text-lg text-dark-brown/80 mb-8 leading-relaxed">
-                                        {content?.description}
-                                    </p>
-
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <Link to="/contact" className="btn-primary flex items-center justify-center gap-2">
-                                            Vraag direct aan
-                                            <ArrowRight size={18} />
-                                        </Link>
-                                        <Link to="/tarieven" className="btn-secondary">
-                                            Bekijk alle tarieven
-                                        </Link>
-                                    </div>
-
-                                    <div className="mt-8 pt-6 border-t border-dark-brown/10">
-                                        <p className="text-sm text-dark-brown/60 flex items-center justify-center gap-2">
-                                            Wil je de test opnieuw doen?
-                                            <button
-                                                onClick={() => {
-                                                    setShowResult(false);
-                                                    setCurrentStep(0);
-                                                    setAnswers([]);
-                                                }}
-                                                className="text-dark-brown font-semibold hover:underline flex items-center gap-1"
-                                            >
-                                                <RotateCcw size={14} />
-                                                Klik hier
-                                            </button>
-                                        </p>
-                                    </div>
+                                <h2 className="text-3xl font-serif text-highlight mb-2">
+                                    {content?.title}
+                                </h2>
+                                <p className="text-lg text-nav-text mb-8">
+                                    {content?.description}
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <Link to="/contact" className="btn-primary">
+                                        Plan een gesprek
+                                    </Link>
+                                    <Link to="/tarieven" className="btn-secondary">
+                                        Bekijk tarieven
+                                    </Link>
+                                </div>
+                                <div className="mt-8 pt-6 border-t border-nav-button">
+                                    <button
+                                        onClick={() => {
+                                            setShowResult(false);
+                                            setCurrentStep(0);
+                                            setAnswers([]);
+                                        }}
+                                        className="text-nav-text hover:text-highlight flex items-center gap-2 mx-auto transition-colors"
+                                    >
+                                        <RotateCcw size={16} />
+                                        Doe de test opnieuw
+                                    </button>
                                 </div>
                             </div>
                         </div>

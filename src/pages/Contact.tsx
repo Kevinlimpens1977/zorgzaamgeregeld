@@ -2,101 +2,79 @@ import { Mail, Phone, MapPin, CheckCircle, Calendar, Clock } from 'lucide-react'
 
 const Contact = () => {
     return (
-        <div>
-            {/* Hero Section */}
-            <section className="section-padding bg-sandstone">
-                <div className="container-custom text-center">
-                    <h1 className="text-5xl md:text-6xl font-serif font-bold text-dark-brown mb-6">
-                        Contact
+        <div className="bg-background">
+            {/* Header Section */}
+            <header className="pt-40 pb-20 text-center">
+                <div className="container-custom">
+                    <h1 className="text-5xl md:text-6xl font-serif text-highlight mb-4">
+                        Neem Contact Op
                     </h1>
-                    <p className="text-xl text-dark-brown/80 max-w-3xl mx-auto">
-                        Heb je vragen of wil je kennismaken? Neem gerust contact op.
-                        Ik sta je graag te woord om te kijken wat ik voor je kan betekenen.
+                    <p className="text-xl text-nav-text max-w-3xl mx-auto">
+                        Ik sta klaar om uw vragen te beantwoorden en met u mee te denken.
                     </p>
                 </div>
-            </section>
+            </header>
 
-            {/* Contact Info */}
-            <section className="section-padding bg-beige-light">
-                <div className="container-custom max-w-5xl">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                        <div className="card text-center">
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <Mail size={32} />
+            {/* Contact Info Section */}
+            <section className="section-padding">
+                <div className="container-custom">
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
+                        <div className="bg-white p-8 rounded-xl">
+                             <div className="inline-block p-5 bg-tile/10 rounded-full mb-5 text-nav-text">
+                                <Mail size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Email
-                            </h3>
-                            <a href="mailto:info@zorgzaamgeregeld.nl" className="text-dark-brown/80 hover:text-dark-brown">
+                            <h3 className="text-2xl font-serif text-highlight mb-2">E-mail</h3>
+                            <a href="mailto:info@zorgzaamgeregeld.nl" className="text-lg text-nav-text hover:text-highlight transition-colors">
                                 info@zorgzaamgeregeld.nl
                             </a>
                         </div>
-
-                        <div className="card text-center">
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <Phone size={32} />
+                         <div className="bg-white p-8 rounded-xl">
+                             <div className="inline-block p-5 bg-tile/10 rounded-full mb-5 text-nav-text">
+                                <Phone size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Telefoon
-                            </h3>
-                            <a href="tel:0612345678" className="text-dark-brown/80 hover:text-dark-brown">
+                            <h3 className="text-2xl font-serif text-highlight mb-2">Telefoon</h3>
+                            <a href="tel:0612345678" className="text-lg text-nav-text hover:text-highlight transition-colors">
                                 06 12 34 56 78
                             </a>
-                        </div>
-
-                        <div className="card text-center">
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <MapPin size={32} />
-                            </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Werkgebied
-                            </h3>
-                            <p className="text-dark-brown/80">
-                                Nederland
-                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Additional Info */}
-            <section className="section-padding bg-gradient-to-br from-card-bg to-sandstone">
-                <div className="container-custom max-w-4xl text-center">
-                    <h2 className="text-3xl font-serif font-bold text-dark-brown mb-6">
-                        Hoe nu verder?
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Process Section */}
+            <section className="section-padding bg-tile/10">
+                 <div className="container-custom">
+                     <div className="max-w-3xl mx-auto text-center mb-16">
+                         <h2 className="text-4xl md:text-5xl font-serif text-highlight">
+                            Het Proces in Drie Stappen
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                         <div>
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <Clock size={40} strokeWidth={1.5} />
+                             <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-nav-text">
+                                <Clock size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Contact opnemen
-                            </h3>
-                            <p className="text-dark-brown/80">
-                                Bel of mail mij met je hulpvraag. Ik probeer altijd binnen 24 uur te reageren.
+                            <h3 className="text-2xl font-serif text-highlight mb-2">1. Kennismaking</h3>
+                            <p className="text-nav-text/80">
+                                U neemt contact op. We plannen een vrijblijvend gesprek om uw wensen te bespreken.
                             </p>
                         </div>
-                        <div>
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <CheckCircle size={40} strokeWidth={1.5} />
+                         <div>
+                             <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-nav-text">
+                                <CheckCircle size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Vrijblijvend gesprek
-                            </h3>
-                            <p className="text-dark-brown/80">
-                                We bespreken jouw situatie en kijken samen wat de beste aanpak is.
+                            <h3 className="text-2xl font-serif text-highlight mb-2">2. Plan op Maat</h3>
+                            <p className="text-nav-text/80">
+                                Op basis van ons gesprek stel ik een persoonlijk plan van aanpak voor.
                             </p>
                         </div>
-                        <div>
-                            <div className="text-dark-brown mb-4 flex justify-center">
-                                <Calendar size={40} strokeWidth={1.5} />
+                         <div>
+                             <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-nav-text">
+                                <Calendar size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-serif font-semibold text-dark-brown mb-2">
-                                Direct aan de slag
-                            </h3>
-                            <p className="text-dark-brown/80">
-                                Als we een match zijn, kunnen we vaak binnen een week starten met de ondersteuning.
+                            <h3 className="text-2xl font-serif text-highlight mb-2">3. Start Ondersteuning</h3>
+                             <p className="text-nav-text/80">
+                                Na uw akkoord starten we op de afgesproken tijd. Rust en overzicht, geregeld.
                             </p>
                         </div>
                     </div>

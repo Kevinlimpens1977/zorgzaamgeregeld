@@ -1,50 +1,53 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const footerNav = [
+        { name: 'Home', path: '/' },
+        { name: 'Diensten', path: '/diensten' },
+        { name: 'Over Mij', path: '/over-mij' },
+        { name: 'Contact', path: '/contact' },
+    ];
+
     return (
-        <footer className="bg-dark-brown text-beige-light mt-0">
-            <div className="container-custom section-padding">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 className="text-2xl font-serif font-bold mb-4 text-beige-light">Zorgzaam Geregeld</h3>
-                        <p className="text-beige-light/80">
-                            Jouw rust in de wirwar van zorg. Eerlijke ondersteuning, warme aandacht en professionele handen die het écht overnemen.
+        <footer className="bg-taupe text-white py-20 pb-10">
+            <div className="container-custom">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 border-b border-white/20 pb-16">
+                    <div className="basis-1/3">
+                        <Link to="/" className="text-3xl lg:text-4xl font-serif tracking-wide hover:opacity-80 transition-opacity">
+                            Zorgzaam Geregeld
+                        </Link>
+                        <p className="mt-4 text-white/80 font-light max-w-xs">
+                            Persoonlijke ondersteuning met rust, aandacht en structuur.
                         </p>
                     </div>
 
-                    <div>
-                        <h4 className="text-xl font-serif font-semibold mb-4 text-beige-light">Contact</h4>
-                        <ul className="space-y-3 text-beige-light/80">
-                            <li className="flex items-center gap-3">
-                                <Mail size={18} />
-                                <a href="mailto:info@zorgzaamgeregeld.nl" className="hover:text-white transition-colors">info@zorgzaamgeregeld.nl</a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone size={18} />
-                                <a href="tel:0612345678" className="hover:text-white transition-colors">06 12 34 56 78</a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <MapPin size={18} />
-                                <span>Nederland</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <nav className="basis-1/3 flex flex-col md:flex-row gap-6 md:gap-8 text-lg font-light">
+                        {footerNav.map(item => (
+                            <Link
+                                key={item.path}
+                                to={item.path}
+                                className="hover:text-champagne transition-colors relative group"
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-champagne transition-all duration-300 group-hover:w-full"></span>
+                            </Link>
+                        ))}
+                    </nav>
 
-                    <div>
-                        <h4 className="text-xl font-serif font-semibold mb-4 text-beige-light">Diensten</h4>
-                        <ul className="space-y-2 text-beige-light/80">
-                            <li><Link to="/diensten" className="hover:text-white transition-colors">Huishoudelijke ondersteuning</Link></li>
-                            <li><Link to="/diensten" className="hover:text-white transition-colors">Opruimen & structuur</Link></li>
-                            <li><Link to="/diensten" className="hover:text-white transition-colors">Verhuisklaar maken</Link></li>
-                            <li><Link to="/diensten" className="hover:text-white transition-colors">Vervuilde woningen reinigen</Link></li>
-                            <li><Link to="/diensten" className="hover:text-white transition-colors">Mantelzorg-ondersteuning</Link></li>
-                        </ul>
+                    <div className="basis-1/3 md:text-right text-lg font-light">
+                        <a href="mailto:info@zorgzaamgeregeld.nl" className="hover:text-champagne transition-colors block mb-2">
+                            info@zorgzaamgeregeld.nl
+                        </a>
+                        {/* Optional: Add phone number or address here if needed */}
                     </div>
                 </div>
 
-                <div className="border-t border-beige-light/20 mt-12 pt-8 text-center text-beige-light/60 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Zorgzaam Geregeld. Alle rechten voorbehouden.</p>
+                <div className="pt-10 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm font-light">
+                    <p>&copy; {new Date().getFullYear()} Zorgzaam Geregeld.</p>
+                    <div className="flex gap-6 mt-4 md:mt-0">
+                        <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                        <Link to="/voorwaarden" className="hover:text-white transition-colors">Algemene Voorwaarden</Link>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -52,3 +55,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

@@ -1,29 +1,47 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
-  /* Color Palette - Aangepast naar schermafbeelding */
-  --color-cacao: #5D4A3C;
-  --color-sandstone: #F5EDE4;
-  --color-beige-light: #FAF6F1;
-  --color-card-bg: #FFFFFF;
-  --color-dark-brown: #5D4A3C;
-  --color-soft-gold: #C9A072;
+  /* Zorgzaam Geregeld - Luxe Minimalistisch Palet */
+  --color-base: #F7F4F2;
+  /* Hoofdfond */
+  --color-surface: #EDE7E3;
+  /* Lichte secties */
+  --color-taupe: #D7CDC7;
+  /* Taupe accent / Footer basis */
+  --color-champagne: #C2A079;
+  /* Champagnegoud / Knoppen */
+  --color-bronze: #B69D85;
+  /* Bronsgoud */
+  --color-gold: #A07F5A;
+  /* Goud voor lijnen/iconen */
+
+  --color-text: #4A4A4A;
+  /* Bodytekst */
+  --color-title: #2F2F2F;
+  /* Titels */
+  --color-white: #FFFFFF;
 
   /* Typography */
-  --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  /* Koppen */
+  --font-sans: 'Lato', sans-serif;
+  /* Body */
+  --font-btn: 'Montserrat', sans-serif;
+  /* Knoppen */
 
-  /* Shadows */
-  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
+  /* Shadows for depth */
+  --shadow-soft: 0 10px 40px -10px rgba(74, 74, 74, 0.05);
+  --shadow-card: 0 15px 30px -5px rgba(194, 160, 121, 0.15);
 }
 
 @layer base {
   html {
-    /* Smooth scroll removed for multi-page navigation */
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans text-dark-brown bg-beige-light antialiased;
+    @apply bg-base text-text font-sans antialiased selection:bg-champagne selection:text-white;
   }
 
   h1,
@@ -32,58 +50,68 @@
   h4,
   h5,
   h6 {
-    @apply font-serif tracking-tight font-medium text-dark-brown;
+    @apply font-serif text-title font-normal;
   }
 
   h1 {
-    @apply font-semibold;
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
   }
 
-  h2,
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-snug;
+  }
+
   h3 {
-    @apply font-medium;
+    @apply text-2xl md:text-3xl leading-snug;
   }
 
-  p,
-  a,
-  li,
-  span,
-  button,
-  input,
-  textarea,
-  label {
-    @apply font-sans font-normal;
+  p {
+    @apply leading-relaxed tracking-wide text-text/90 font-light;
+  }
+
+  button {
+    @apply font-btn tracking-wider uppercase text-sm font-medium;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 sm:px-12 lg:px-16;
   }
 
   .section-padding {
-    @apply py-24 md:py-32;
-    /* Increased spacing for "ruim" feel */
+    @apply py-24 md:py-32 lg:py-40;
   }
 
+  /* Luxe Buttons */
   .btn-primary {
-    @apply inline-block bg-dark-brown text-beige-light px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-cacao hover:shadow-soft text-center cursor-pointer hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center bg-champagne text-white px-8 py-4 rounded-sm transition-all duration-500 hover:bg-gold hover:shadow-lg hover:-translate-y-1;
   }
 
   .btn-secondary {
-    @apply inline-block bg-transparent border-2 border-dark-brown text-dark-brown px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-dark-brown hover:text-beige-light text-center cursor-pointer hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center bg-transparent border border-champagne text-title px-8 py-4 rounded-sm transition-all duration-500 hover:bg-champagne hover:text-white hover:border-transparent;
   }
 
-  .card {
-    @apply bg-card-bg p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  .btn-text {
+    @apply inline-flex items-center gap-2 text-gold border-b border-gold pb-1 transition-all duration-300 hover:text-bronze hover:border-bronze;
   }
 
-  .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-cacao focus:border-transparent outline-none transition-all bg-white/50 focus:bg-white;
+  /* Cards */
+  .card-service {
+    @apply bg-base p-10 rounded-2xl transition-all duration-500 hover:shadow-card hover:-translate-y-2 border border-transparent hover:border-surface;
+  }
+
+  /* Divider Lines */
+  .divider-gold {
+    @apply w-full h-[1px] bg-champagne opacity-40 my-12;
+  }
+
+  .divider-vertical {
+    @apply w-[1px] h-12 bg-champagne mx-auto my-6;
   }
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -97,19 +125,17 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
+.delay-100 {
+  animation-delay: 100ms;
 }
 
-.animate-shimmer {
-  animation: shimmer 2.5s infinite;
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
 }

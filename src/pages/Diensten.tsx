@@ -81,121 +81,83 @@ const Diensten = () => {
     ];
 
     return (
-        <div>
-            {/* Hero Section */}
-            <section className="section-padding bg-sandstone">
-                <div className="container-custom text-center">
-                    <h1 className="text-5xl md:text-6xl font-serif font-bold text-dark-brown mb-6">
+        <div className="bg-cream-bg">
+            {/* Header Section */}
+            <header className="pt-40 pb-20 text-center">
+                <div className="container-custom">
+                    <h1 className="text-5xl md:text-6xl font-serif text-dark-contrast mb-4">
                         Mijn Diensten
                     </h1>
-                    <p className="text-xl text-dark-brown/80 max-w-3xl mx-auto">
-                        Professionele ondersteuning op maat. Van huishoudelijke hulp tot intensieve zorg –
-                        ik ben er voor jou.
+                    <p className="text-xl text-dark-contrast/80 max-w-3xl mx-auto">
+                        Flexibele, professionele ondersteuning, volledig afgestemd op uw persoonlijke behoeften.
                     </p>
                 </div>
-            </section>
+            </header>
 
-            {/* Services Detail Section */}
-            <section className="section-padding bg-beige-light">
+            {/* Services List Section */}
+            <section className="section-padding bg-light-gray/30">
                 <div className="container-custom">
-                    <div className="space-y-16">
+                    <div className="space-y-20">
                         {services.map((service, index) => (
-                            <div
-                                key={index}
-                                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                                    }`}
-                            >
-                                {/* Service Info */}
-                                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                                    <div className="flex items-center mb-4">
-                                        <span className="text-dark-brown mr-4">{service.icon}</span>
-                                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-brown">
-                                            {service.title}
-                                        </h2>
+                            <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                                <div className="md:col-span-1 text-center md:text-left">
+                                    <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
+                                        {service.icon}
                                     </div>
-                                    <p className="text-lg text-dark-brown/80 mb-6">
+                                    <h2 className="text-3xl font-serif text-dark-contrast">
+                                        {service.title}
+                                    </h2>
+                                </div>
+                                <div className="md:col-span-2">
+                                    <p className="text-lg text-dark-contrast/80 mb-6">
                                         {service.description}
                                     </p>
-
-                                    <div className="bg-card-bg p-6 rounded-lg mb-4 shadow-soft">
-                                        <h3 className="text-xl font-serif font-semibold text-dark-brown mb-3">
-                                            Voor wie?
-                                        </h3>
-                                        <p className="text-dark-brown/80">{service.targetGroup}</p>
-                                    </div>
-
-                                    <div className="bg-sandstone p-6 rounded-lg shadow-soft">
-                                        <div className="flex items-center mb-3">
-                                            <Euro size={20} className="text-dark-brown mr-2" />
-                                            <h3 className="text-xl font-serif font-semibold text-dark-brown">
-                                                PGB-mogelijkheden
-                                            </h3>
-                                        </div>
-                                        <p className="text-dark-brown/80">{service.pgb}</p>
-                                    </div>
-                                </div>
-
-                                {/* Service Details */}
-                                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                                    <div className="card">
-                                        <h3 className="text-2xl font-serif font-semibold text-dark-brown mb-4">
-                                            Wat ik voor je doe:
-                                        </h3>
-                                        <ul className="space-y-3">
-                                            {service.details.map((detail, idx) => (
-                                                <li key={idx} className="flex items-start">
-                                                    <Check size={20} className="text-dark-brown mr-3 mt-1 flex-shrink-0" />
-                                                    <span className="text-dark-brown/80">{detail}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                    <ul className="space-y-2">
+                                        {service.details.slice(0, 4).map((detail, idx) => ( // Show first 4
+                                            <li key={idx} className="flex items-center">
+                                                <Check size={18} className="text-gold-accent mr-3 flex-shrink-0" />
+                                                <span className="text-dark-contrast/70">{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-
+            
             {/* PGB Info Section */}
-            <section className="section-padding bg-gradient-to-br from-card-bg to-sandstone">
-                <div className="container-custom max-w-4xl">
-                    <div className="card">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-brown mb-6 text-center">
-                            Werken met PGB (Persoonsgebonden Budget)
-                        </h2>
-                        <div className="space-y-4 text-dark-brown/80">
-                            <p className="text-lg">
-                                Veel van mijn diensten zijn declarabel via PGB. Dit betekent dat je de kosten
-                                (gedeeltelijk) vergoed kunt krijgen vanuit je zorgbudget.
-                            </p>
-                            <p>
-                                <strong className="text-dark-brown">Hoe werkt het?</strong><br />
-                                Als je een PGB hebt, kun je mij inhuren als zorgverlener. Ik help je graag met
-                                de administratie en declaraties, zodat het voor jou zo makkelijk mogelijk is.
-                            </p>
-                            <p>
-                                <strong className="text-dark-brown">Nog geen PGB?</strong><br />
-                                Ik kan je adviseren over de mogelijkheden en je helpen bij het aanvragen van
-                                een PGB als dit voor jou geschikt is.
-                            </p>
-                        </div>
+            <section className="section-padding bg-cream-bg">
+                <div className="container-custom max-w-4xl text-center">
+                     <div className="inline-block p-5 bg-white rounded-full shadow-sm mb-5 text-gold-accent">
+                        <Euro size={40} strokeWidth={1.5} />
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
+                        Financiering via PGB
+                    </h2>
+                    <div className="prose prose-lg mx-auto text-dark-contrast/80">
+                        <p>
+                            Veel van mijn diensten kunnen worden gefinancierd vanuit een Persoonsgebonden Budget (PGB). Dit biedt u de vrijheid om zelf uw zorgverlener te kiezen.
+                        </p>
+                        <p>
+                            Heeft u vragen over de mogelijkheden of hulp nodig bij de administratie? Ik adviseer en ondersteun u graag.
+                        </p>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-dark-brown text-beige-light">
+            <section className="section-padding bg-light-gray/30">
                 <div className="container-custom text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-beige-light">
-                        Welke dienst past bij jou?
+                    <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
+                        Welke dienst past bij u?
                     </h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto text-beige-light/90">
-                        Twijfel je welke ondersteuning je nodig hebt? Neem contact op voor een
-                        vrijblijvend gesprek. Samen kijken we wat het beste bij jouw situatie past.
+                    <p className="text-xl mb-8 max-w-2xl mx-auto text-dark-contrast/80">
+                        Iedere situatie is uniek. Laten we vrijblijvend uw wensen bespreken en de perfecte oplossing vinden.
                     </p>
-                    <Link to="/contact" className="btn-primary bg-beige-light text-dark-brown hover:bg-sandstone hover:text-dark-brown shadow-none">
-                        Neem contact op
+                    <Link to="/contact" className="btn-primary">
+                        Start het gesprek
                     </Link>
                 </div>
             </section>

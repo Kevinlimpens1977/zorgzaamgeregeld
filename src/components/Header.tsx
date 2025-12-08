@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/header.png';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+    const currentYear = new Date().getFullYear();
 
     const navItems = [
         { name: 'Home', path: '/' },
@@ -17,72 +19,89 @@ const Header = () => {
     ];
 
     const isActive = (path: string) => {
-        if (path === '/') {
-            return location.pathname === '/';
-        }
+        if (path === '/') return location.pathname === '/';
         return location.pathname === path;
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-cacao py-4 shadow-lg">
-            <nav className="container-custom">
-                <div className="flex items-center justify-between">
-                    <Link to="/" className="text-2xl md:text-3xl font-serif font-bold text-beige-light tracking-wide hover:opacity-90 transition-opacity">
-                        Zorgzaam Geregeld
-                    </Link>
+        <>
+            {/* 1. Logo - Fixed Top Left */}
+            <header className="fixed top-6 left-6 md:top-10 md:left-12 z-50">
+                <Link to="/" className="block hover:opacity-80 transition-opacity">
+                    <img
+                        src={logo}
+                        alt="Zorgzaam Geregeld"
+                        className="h-20 md:h-28 w-auto object-contain mix-blend-multiply"
+                    />
+                </Link>
+            </header>
 
-                    {/* Desktop Navigation */}
-                    <ul className="hidden md:flex space-x-2 lg:space-x-3">
-                        {navItems.map((item) => (
-                            <li key={item.path}>
-                                <Link
-                                    to={item.path}
-                                    className={`px-5 py-2.5 rounded-lg text-sm uppercase tracking-wider font-medium transition-all duration-300 border border-transparent relative overflow-hidden group
-                                        ${isActive(item.path)
-                                            ? 'bg-white/10 text-white border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.15)] backdrop-blur-sm'
-                                            : 'text-beige-light/80 hover:text-white hover:bg-white/5'
-                                        }`}
-                                >
-                                    <span className="relative z-10">{item.name}</span>
-                                    {isActive(item.path) && (
-                                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 animate-shimmer"></div>
-                                    )}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+            {/* 2. Copyright - Fixed Bottom Left (Hidden on small mobile to save space) */}
+            <div className="fixed bottom-6 left-6 md:bottom-10 md:left-12 z-40 hidden md:block">
+                <span className="text-gold font-serif text-sm">©{currentYear}</span>
+            </div>
 
-                    {/* Mobile Menu Button */}
+            {/* 3. Navigation - Fixed Bottom Right */}
+            <nav className="fixed bottom-6 right-6 md:bottom-10 md:right-12 z-50 text-right">
+
+                {/* Desktop: Always visible vertical list */}
+                <ul className="hidden md:flex flex-col space-y-1">
+                    {navItems.map((item) => (
+                        <li key={item.path}>
+                            <Link
+                                to={item.path}
+                                className={`uppercase tracking-widest text-xs font-bold transition-colors duration-300 block py-1
+                                    ${isActive(item.path)
+                                        ? 'text-title'
+                                        : 'text-gold/80 hover:text-title'
+                                    }`}
+                            >
+                                <span className="inline-block w-4 text-right mr-2 font-serif text-gold">
+                                    {isActive(item.path) ? '»' : ''}
+                                </span>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Mobile: Hamburger Button at Bottom Right */}
+                <div className="md:hidden">
                     <button
-                        className="md:hidden text-beige-light focus:outline-none p-2 hover:bg-white/10 rounded-lg transition-colors"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle menu"
+                        className="bg-base/90 p-3 rounded-full shadow-lg text-title border border-gold/20"
+                        aria-label="Menu"
                     >
-                        {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
-
-                {/* Mobile Menu */}
-                <div className={`md:hidden absolute top-full left-0 right-0 bg-cacao border-t border-white/10 shadow-xl transition-all duration-500 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <ul className="flex flex-col p-6 space-y-2">
-                        {navItems.map((item) => (
-                            <li key={item.path}>
-                                <Link
-                                    to={item.path}
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className={`block w-full text-left text-lg font-serif py-4 px-4 rounded-lg transition-all duration-300
-                                        ${isActive(item.path)
-                                            ? 'bg-white/10 text-white pl-6 border-l-4 border-soft-gold shadow-inner'
-                                            : 'text-beige-light/70 hover:text-white hover:bg-white/5'}`}
-                                >
-                                    {item.name}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
             </nav>
-        </header>
+
+            {/* Mobile Menu Overlay */}
+            <div
+                className={`fixed inset-0 bg-base z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden
+                ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+            >
+                <ul className="space-y-6 text-center">
+                    {navItems.map((item) => (
+                        <li key={item.path}>
+                            <Link
+                                to={item.path}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`text-2xl font-serif block transition-colors duration-300
+                                    ${isActive(item.path) ? 'text-gold italic' : 'text-title'}`}
+                            >
+                                {isActive(item.path) && <span className="mr-2">»</span>}
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <div className="absolute bottom-10 text-gold font-serif text-sm">
+                    ©{currentYear} Zorgzaam Geregeld
+                </div>
+            </div>
+        </>
     );
 };
 

@@ -9,6 +9,8 @@ interface PricingCardProps {
     highlighted?: boolean;
     ctaText?: string;
     ctaLink?: string;
+    isSelected?: boolean;
+    onSelect?: () => void;
 }
 
 const PricingCard = ({
@@ -18,42 +20,59 @@ const PricingCard = ({
     features,
     highlighted = false,
     ctaText = "Neem contact op",
-    ctaLink = "/contact"
+    ctaLink = "/contact",
+    isSelected,
+    onSelect
 }: PricingCardProps) => {
+    const isHighlightedAndSelected = highlighted && isSelected;
+
+    const cardClasses = isSelected
+        ? 'border-4 border-gold-accent shadow-xl transform scale-105'
+        : 'border border-gold-accent hover:shadow-medium';
+
+    const buttonClasses = isSelected
+        ? 'bg-nav-text text-background'
+        : 'bg-transparent text-nav-text border border-nav-text';
+        
+    const animationClass = isSelected ? 'animate-wiggle' : '';
+
     return (
-        <div className={`card ${highlighted ? 'ring-2 ring-dark-brown scale-105 shadow-xl' : ''} relative flex flex-col h-full`}>
+        <div
+            className={`relative card p-8 rounded-xl flex flex-col h-full transition-all duration-300 cursor-pointer bg-white ${cardClasses} ${animationClass}`}
+            onClick={onSelect}
+        >
             {highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-dark-brown text-beige-light px-6 py-1 rounded-full text-sm font-semibold shadow-md">
-                    Populair
+                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-1 border-2 border-gold-accent rounded-md">
+                    <span className="text-sm font-semibold text-nav-text">Meest gekozen</span>
                 </div>
             )}
 
-            <div className="text-center mb-6">
-                <h3 className="text-2xl font-serif font-bold text-dark-brown mb-2">
+            <div className={`mb-6 text-center ${isHighlightedAndSelected ? 'text-white' : 'text-dark-contrast'}`}>
+                <h3 className="text-2xl font-serif font-medium">
                     {title}
                 </h3>
                 {price && (
-                    <div className="text-3xl font-bold text-cacao mb-2">
+                    <div className="text-4xl font-serif font-medium my-4">
                         {price}
                     </div>
                 )}
-                <p className="text-dark-brown/70">
+                <p className="text-base ">
                     {description}
                 </p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-grow">
                 {features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                        <Check size={18} className="text-dark-brown mr-2 mt-1 flex-shrink-0" />
-                        <span className="text-dark-brown/80">{feature}</span>
+                    <li key={index} className="flex items-center">
+                        <Check size={18} className="mr-3 flex-shrink-0 text-nav-text" />
+                        <span className="text-nav-text/80">{feature}</span>
                     </li>
                 ))}
             </ul>
 
             <Link
                 to={ctaLink}
-                className={`block w-full ${highlighted ? 'btn-primary' : 'btn-secondary'}`}
+                className={`block w-full text-center py-3 px-6 rounded-full font-medium transition-colors duration-300 ${buttonClasses}`}
             >
                 {ctaText}
             </Link>

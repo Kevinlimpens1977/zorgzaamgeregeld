@@ -8,8 +8,6 @@ import Tarieven from './pages/Tarieven';
 import Contact from './pages/Contact';
 import Quiz from './pages/Quiz';
 import Vergoedingen from './pages/Vergoedingen';
-import './index.css';
-
 function App() {
   return (
     <Router>
