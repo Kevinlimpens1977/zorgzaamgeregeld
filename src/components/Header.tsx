@@ -50,7 +50,7 @@ const Header = () => {
                         <li key={item.path}>
                             <Link
                                 to={item.path}
-                                className={`uppercase tracking-widest text-xs font-bold transition-colors duration-300 block py-1
+                                className={`uppercase tracking-widest text-sm font-bold transition-colors duration-300 block py-1
                                     ${isActive(item.path)
                                         ? 'text-title'
                                         : 'text-gold/80 hover:text-title'
