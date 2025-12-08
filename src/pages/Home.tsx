@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import ReviewCarousel from '../components/ReviewCarousel';
 import { useState } from 'react';
-import daanImage from '../assets/daan.jpg';
+import daanImage from '../assets/danielle.jpg';
 
 const Home = () => {
     const [hoveredService, setHoveredService] = useState<number | null>(null);
