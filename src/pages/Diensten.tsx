@@ -1,4 +1,4 @@
-import { Home as HomeIcon, Package, Truck, Sparkles, Heart, Check, Euro } from 'lucide-react';
+import { Home as HomeIcon, Package, Truck, Sparkles, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Diensten = () => {

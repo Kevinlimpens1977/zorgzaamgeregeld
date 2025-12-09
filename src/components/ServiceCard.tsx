@@ -8,7 +8,7 @@ interface ServiceCardProps {
     isHovered?: boolean;
 }
 
-const ServiceCard = ({ title, description, icon, isHovered }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, isHovered }: ServiceCardProps) => {
     return (
         <div className={`card-service h-full flex flex-col items-center text-center group ${isHovered ? 'shadow-card -translate-y-2 border-surface' : ''}`}>
             <div className="mb-6">
