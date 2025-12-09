@@ -7,7 +7,7 @@ const OverMij = () => {
             <header className="pt-40 pb-20 text-center">
                 <div className="container-custom">
                     <h1 className="text-5xl md:text-6xl font-serif text-dark-contrast">
-                        Mijn Belofte aan U
+                        Over Mij
                     </h1>
                 </div>
             </header>
@@ -50,18 +50,17 @@ const OverMij = () => {
                                     En ook al doe je zo je best, het gevoel dat je tekort schiet knaagt. Want onze ouders verdienen onze aandacht! Maar helaas heeft een dag maar 24 uur…
                                 </p>
                                 <p>
-                                    En daarom doe ik nu precies waar ik destijds zelf zo naar verlangde:
-                                </p>
-                                <p className="font-medium">
-                                    Met aandacht en rust klaarstaan voor ouderen, hen helpen in het dagelijkse leven en tegelijkertijd mantelzorgers ontlasten die vaak veel meer dragen dan ze laten zien.
+                                    En daarom doe ik nu precies waar ik destijds zelf zo naar verlangde: Met aandacht en rust klaarstaan voor ouderen, hen helpen in het dagelijkse leven en tegelijkertijd mantelzorgers ontlasten die vaak veel meer dragen dan ze laten zien.
                                 </p>
                                 <p>
-                                    Met mijn ervaring én mijn nuchtere, professionele aanpak kijken we samen wat er nodig is en gaan we het stap voor stap oplossen. Ik werk met humor, menselijkheid en een flinke dosis nuchterheid. Geen oordeel, geen ingewikkeld gedoe maar gewoon iemand die begrijpt waar je doorheen gaat en met je meedenkt.
+                                    Met mijn ervaring én mijn nuchtere, professionele aanpak kijken we samen wat er nodig is en gaan we het stap voor stap oplossen.
                                 </p>
-                                <div className="pt-4">
-                                    <h3 className="text-xl font-serif text-title mb-2">Zorgzaam Geregeld staat voor rust, overzicht en oprechte betrokkenheid.</h3>
-                                    <p className="italic text-gold">Omdat niemand het alleen hoeft te doen.</p>
-                                </div>
+                                <p>
+                                    Ik werk met humor, menselijkheid en een flinke dosis nuchterheid. Geen oordeel, geen ingewikkeld gedoe maar gewoon iemand die begrijpt waar je doorheen gaat en met je meedenkt.
+                                </p>
+                                <p className="font-medium">
+                                    Omdat NIEMAND dit alleen hoeft te dragen!
+                                </p>
                             </div>
                         </div>
                     </div>

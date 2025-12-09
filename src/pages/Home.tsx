@@ -50,13 +50,21 @@ const Home = () => {
             <section className="section-padding relative bg-base">
                 <div className="container-custom">
                     <div className="max-w-3xl mx-auto text-center space-y-8">
-                        <span className="text-gold uppercase tracking-[0.2em] text-xs font-bold">Over Zorgzaam Geregeld</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-title italic leading-tight">
-                            Een luisterend oor, <br /> een helpende hand.
+                            Soms loopt het leven over..
                         </h2>
                         <div className="divider-vertical"></div>
                         <p className="text-lg md:text-xl text-text font-light leading-relaxed">
-                            Het leven kan soms overweldigend zijn. Ik bied een stabiele factor in de chaos, een partner die met warmte, professionaliteit en daadkracht uw zorgen verlicht.
+                            Mantelzorgen voor een naaste, jouw eigen huishouden bijhouden, de administratie niet laten liggen, spullen die zich opstapelen of een verhuizing die ineens sneller gaat dan je had gedacht…
+                        </p>
+                        <p className="text-lg md:text-xl text-text font-light leading-relaxed mt-4">
+                            Zorgzaam Geregeld helpt je overzicht terug te krijgen. Met praktische hulp die écht ontlast
+                        </p>
+                        <p className="text-lg md:text-xl text-text font-light leading-relaxed mt-4">
+                            Zorgzaam Geregeld…
+                        </p>
+                        <p className="text-lg md:text-xl text-text font-bold leading-relaxed mt-4">
+                            Omdat NIEMAND dit alleen hoeft te dragen!
                         </p>
                     </div>
                 </div>
