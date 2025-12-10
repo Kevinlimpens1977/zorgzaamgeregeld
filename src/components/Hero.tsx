@@ -18,7 +18,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-2xl text-title max-w-2xl mx-auto leading-relaxed font-light">
-                        Uw partner voor rust, structuur en persoonlijke ondersteuning in het dagelijks leven.
+                        Jouw partner voor rust, structuur en persoonlijke ondersteuning in het dagelijks leven.
                     </p>
 
                     <div className="pt-8">

@@ -10,7 +10,7 @@ const Contact = () => {
                         Neem Contact Op
                     </h1>
                     <p className="text-xl text-nav-text max-w-3xl mx-auto">
-                        Ik sta klaar om uw vragen te beantwoorden en met u mee te denken.
+                        Ik sta klaar om jouw vragen te beantwoorden en met je mee te denken.
                     </p>
                 </div>
             </header>
@@ -56,7 +56,7 @@ const Contact = () => {
                             </div>
                             <h3 className="text-2xl font-serif text-highlight mb-2">1. Kennismaking</h3>
                             <p className="text-nav-text/80">
-                                U neemt contact op. We plannen een vrijblijvend gesprek om uw wensen te bespreken.
+                                Je neemt contact op. We plannen een vrijblijvend gesprek om jouw wensen te bespreken.
                             </p>
                         </div>
                         <div>
@@ -74,7 +74,7 @@ const Contact = () => {
                             </div>
                             <h3 className="text-2xl font-serif text-highlight mb-2">3. Start Ondersteuning</h3>
                             <p className="text-nav-text/80">
-                                Na uw akkoord starten we op de afgesproken tijd. Rust en overzicht, geregeld.
+                                Na jouw akkoord starten we op de afgesproken tijd. Rust en overzicht, geregeld.
                             </p>
                         </div>
                     </div>

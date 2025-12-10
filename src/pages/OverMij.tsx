@@ -88,14 +88,14 @@ const OverMij = () => {
                                 <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                             </div>
                             <h3 className="text-2xl font-serif text-dark-contrast mb-2">Betrouwbaarheid</h3>
-                            <p className="text-dark-contrast/70">Afspraak is afspraak. U kunt op mij rekenen.</p>
+                            <p className="text-dark-contrast/70">Afspraak is afspraak. Je kunt op mij rekenen.</p>
                         </div>
                         <div className="text-center">
                             <div className="mb-5">
                                 <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                             </div>
                             <h3 className="text-2xl font-serif text-dark-contrast mb-2">Professionaliteit</h3>
-                            <p className="text-dark-contrast/70">Ervaren, kundig en altijd met het grootste respect voor uw privacy.</p>
+                            <p className="text-dark-contrast/70">Ervaren, kundig en altijd met het grootste respect voor jouw privacy.</p>
                         </div>
                     </div>
                 </div>
@@ -105,10 +105,10 @@ const OverMij = () => {
             <section className="section-padding bg-cream-bg">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
-                        Bent u klaar voor rust en overzicht?
+                        Ben je klaar voor rust en overzicht?
                     </h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto text-dark-contrast/80">
-                        Ik nodig u uit voor een vrijblijvend gesprek. Laten we samen ontdekken hoe ik u het beste kan ondersteunen.
+                        Ik nodig je uit voor een vrijblijvend gesprek. Laten we samen ontdekken hoe ik jou het beste kan ondersteunen.
                     </p>
                     <Link to="/contact" className="btn-primary">
                         Plan een kennismaking

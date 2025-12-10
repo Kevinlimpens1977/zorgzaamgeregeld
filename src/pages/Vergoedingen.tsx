@@ -10,7 +10,7 @@ const Vergoedingen = () => {
                         Vergoedingen & Mogelijkheden
                     </h1>
                     <p className="text-xl text-nav-text max-w-3xl mx-auto">
-                        Ontdek hoe uw zorg en ondersteuning gefinancierd kunnen worden.
+                        Ontdek hoe jouw zorg en ondersteuning gefinancierd kunnen worden.
                     </p>
                 </div>
             </header>
@@ -25,7 +25,7 @@ const Vergoedingen = () => {
                                 Wmo (Wet maatschappelijke ondersteuning)
                             </h3>
                             <div className="prose prose-lg max-w-none text-nav-text">
-                                <p>De Wmo, uitgevoerd door uw gemeente, helpt u om zelfstandig te blijven wonen. Dit omvat diensten zoals huishoudelijke hulp, begeleiding en mantelzorgondersteuning, vaak te financieren via een PGB.</p>
+                                <p>De Wmo, uitgevoerd door jouw gemeente, helpt je om zelfstandig te blijven wonen. Dit omvat diensten zoals huishoudelijke hulp, begeleiding en mantelzorgondersteuning, vaak te financieren via een PGB.</p>
                             </div>
                         </div>
 
@@ -35,7 +35,7 @@ const Vergoedingen = () => {
                                 PGB (Persoonsgebonden Budget)
                             </h3>
                             <div className="prose prose-lg max-w-none text-nav-text">
-                                <p>Met een PGB kiest u zelf uw zorgverlener. Ik help u met de aanvraag en zorgovereenkomst, waarna de SVB mij rechtstreeks uit uw budget betaalt. U heeft volledige regie, zonder financieel voorschieten.</p>
+                                <p>Met een PGB kies je zelf jouw zorgverlener. Ik help je met de aanvraag en zorgovereenkomst, waarna de SVB mij rechtstreeks uit jouw budget betaalt. Je hebt volledige regie, zonder financieel voorschieten.</p>
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@ const Vergoedingen = () => {
                                 Particuliere Inhuur
                             </h3>
                             <div className="prose prose-lg max-w-none text-nav-text">
-                                <p>Wilt u direct starten zonder wachttijden of indicatieproces? Particuliere inhuur biedt maximale flexibiliteit en is ideaal voor spoed of als overbrugging. Facturen kunnen soms later alsnog gedeclareerd worden.</p>
+                                <p>Wil je direct starten zonder wachttijden of indicatieproces? Particuliere inhuur biedt maximale flexibiliteit en is ideaal voor spoed of als overbrugging. Facturen kunnen soms later alsnog gedeclareerd worden.</p>
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@ const Vergoedingen = () => {
                                 Fiscale Aftrek
                             </h3>
                             <div className="prose prose-lg max-w-none text-nav-text">
-                                <p>Afhankelijk van uw situatie, kunnen de kosten voor zorg aftrekbaar zijn bij de Belastingdienst als 'specifieke zorgkosten'. Dit kan uw netto uitgaven aanzienlijk verlagen. Raadpleeg een adviseur voor details.</p>
+                                <p>Afhankelijk van jouw situatie, kunnen de kosten voor zorg aftrekbaar zijn bij de Belastingdienst als 'specifieke zorgkosten'. Dit kan jouw netto uitgaven aanzienlijk verlagen. Raadpleeg een adviseur voor details.</p>
                             </div>
                         </div>
 
@@ -65,7 +65,7 @@ const Vergoedingen = () => {
                                 Samen vinden we de juiste weg.
                             </h3>
                             <p className="text-xl text-nav-text max-w-2xl mx-auto mb-6">
-                                Het zorglandschap kan complex zijn. Ik help u kosteloos met het uitzoeken van de beste financieringsroute voor uw situatie en ondersteun u bij de aanvraag.
+                                Het zorglandschap kan complex zijn. Ik help je kosteloos met het uitzoeken van de beste financieringsroute voor jouw situatie en ondersteun je bij de aanvraag.
                             </p>
                             <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-lg font-medium text-nav-text">
                                 <a href="tel:0612345678" className="flex items-center hover:text-highlight transition-colors">

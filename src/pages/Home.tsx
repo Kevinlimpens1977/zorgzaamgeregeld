@@ -74,7 +74,7 @@ const Home = () => {
             <section className="section-padding bg-white">
                 <div className="container-custom">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif text-title mb-4">Hoe kan ik u helpen?</h2>
+                        <h2 className="text-3xl md:text-4xl font-serif text-title mb-4">Hoe kan ik jou helpen?</h2>
                         <div className="w-24 h-[1px] bg-champagne mx-auto"></div>
                     </div>
 
@@ -126,7 +126,7 @@ const Home = () => {
                             </h2>
                             <div className="space-y-6 text-lg text-text/80 font-light leading-relaxed">
                                 <p>
-                                    Ik ben geen grote organisatie; ik ben uw persoonlijke partner in zorg. Met jarenlange ervaring en een hart voor mensen, bied ik betrouwbare ondersteuning, altijd zonder oordeel.
+                                    Ik ben geen grote organisatie; ik ben jouw persoonlijke partner in zorg. Met jarenlange ervaring en een hart voor mensen, bied ik betrouwbare ondersteuning, altijd zonder oordeel.
                                 </p>
                                 <p>
                                     Mijn aanpak is simpel: ik kijk naar wat er nodig is en pak het aan. Of het nu gaat om praktische hulp of emotionele steun.
@@ -181,7 +181,7 @@ const Home = () => {
                         Klaar voor meer rust?
                     </h2>
                     <p className="text-xl mb-12 max-w-2xl mx-auto font-light text-white/90">
-                        Laten we vrijblijvend kennismaken. Samen ontdekken we hoe ik u het beste kan ondersteunen.
+                        Laten we vrijblijvend kennismaken. Samen ontdekken we hoe ik jou het beste kan ondersteunen.
                     </p>
                     <Link to="/contact" className="inline-block bg-white text-taupe px-10 py-4 rounded-sm transition-all duration-300 hover:bg-champagne hover:text-white uppercase tracking-widest text-sm font-bold">
                         Neem contact op

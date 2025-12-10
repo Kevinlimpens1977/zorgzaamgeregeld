@@ -98,10 +98,10 @@ const Tarieven = () => {
                             </div>
                             <h3 className="text-2xl font-serif text-dark-contrast mb-2">Maatwerk</h3>
                             <p className="text-dark-contrast/70 mb-6">
-                                Iedere situatie is uniek. We stellen samen een pakket op dat perfect aansluit bij uw wensen.
+                                Iedere situatie is uniek. We stellen samen een pakket op dat perfect aansluit bij jouw wensen.
                             </p>
                             <Link to="/contact" className="btn-secondary">
-                                Bespreek uw wensen
+                                Bespreek jouw wensen
                             </Link>
                         </div>
 

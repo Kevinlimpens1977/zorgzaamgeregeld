@@ -89,7 +89,7 @@ const Diensten = () => {
                         Mijn Diensten
                     </h1>
                     <p className="text-xl text-dark-contrast/80 max-w-3xl mx-auto">
-                        Flexibele, professionele ondersteuning, volledig afgestemd op uw persoonlijke behoeften.
+                        Flexibele, professionele ondersteuning, volledig afgestemd op jouw persoonlijke behoeften.
                     </p>
                 </div>
             </header>
@@ -138,10 +138,10 @@ const Diensten = () => {
                     </h2>
                     <div className="prose prose-lg mx-auto text-dark-contrast/80">
                         <p>
-                            Veel van mijn diensten kunnen worden gefinancierd vanuit een Persoonsgebonden Budget (PGB). Dit biedt u de vrijheid om zelf uw zorgverlener te kiezen.
+                            Veel van mijn diensten kunnen worden gefinancierd vanuit een Persoonsgebonden Budget (PGB). Dit biedt je de vrijheid om zelf jouw zorgverlener te kiezen.
                         </p>
                         <p>
-                            Heeft u vragen over de mogelijkheden of hulp nodig bij de administratie? Ik adviseer en ondersteun u graag.
+                            Heb je vragen over de mogelijkheden of hulp nodig bij de administratie? Ik adviseer en ondersteun je graag.
                         </p>
                     </div>
                 </div>
@@ -151,10 +151,10 @@ const Diensten = () => {
             <section className="section-padding bg-light-gray/30">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
-                        Welke dienst past bij u?
+                        Welke dienst past bij jou?
                     </h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto text-dark-contrast/80">
-                        Iedere situatie is uniek. Laten we vrijblijvend uw wensen bespreken en de perfecte oplossing vinden.
+                        Iedere situatie is uniek. Laten we vrijblijvend jouw wensen bespreken en de perfecte oplossing vinden.
                     </p>
                     <Link to="/contact" className="btn-primary">
                         Start het gesprek
