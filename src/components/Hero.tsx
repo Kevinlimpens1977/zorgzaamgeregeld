@@ -8,17 +8,13 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-10 container-custom text-center">
                 <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fadeIn">
-                    <span className="block text-title uppercase tracking-[0.3em] text-xs md:text-sm font-serif mb-4 opacity-90">
-                        Persoonlijke Zorg & Ondersteuning
-                    </span>
-
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-title leading-tight drop-shadow-sm">
                         Welkom bij <br />
                         <span className="italic text-bronze">Zorgzaam Geregeld</span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-title max-w-2xl mx-auto leading-relaxed font-light">
-                        Jouw partner voor rust, structuur en persoonlijke ondersteuning in het dagelijks leven.
+                    <p className="text-xl md:text-3xl text-gold font-serif italic mt-4">
+                        Jouw rust in de wirwar van zorg
                     </p>
 
                     <div className="pt-8">

@@ -1,82 +1,77 @@
-import { Home as HomeIcon, Package, Truck, Sparkles, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Diensten = () => {
     const services = [
         {
-            title: "Huishoudelijke ondersteuning",
-            icon: <HomeIcon size={40} />,
-            description: "Van stofzuigen tot boodschappen doen – ik neem de dagelijkse taken over zodat jij kunt uitrusten.",
+            title: "Gezelschap & Aandacht",
+            description: "Soms is er niet méér nodig dan iemand die er gewoon is. Een fijn praatje, een luisterend oor, samen een kopje koffie of een wandeling.",
+            intro: "Ouderen missen vaak contact, en mantelzorgers kunnen niet altijd overal tegelijk zijn. Daarom bied ik gezelschap op een warme, rustige en persoonlijke manier. Zonder haast, zonder oordeel, zonder druk.",
             details: [
-                "Schoonmaak en stofzuigen van alle ruimtes",
-                "Was, strijk en opvouwen van kleding",
-                "Boodschappen doen en maaltijden bereiden",
-                "Afwassen en keuken opruimen",
+                "Gezellig Koffiedrinken",
+                "Wandeling of Even Naar Buiten",
+                "Samen Een Spelletje Doen",
+                "Een Luisterend Oor, Verhalen Delen",
+                "Rustige Aanwezigheid in Huis",
+                "Tijd Tegen Eenzaamheid",
+                "Aanwezigheid Wanneer Familie Er Even Niet Kan Zijn"
+            ],
+            footer: "Mijn doel: dat iemand zich gezien, gehoord en veilig voelt."
+        },
+        {
+            title: "Huishoudelijke Ondersteuning",
+            description: "Van basis opfrisbeurt tot een grondige schoonmaak.",
+            intro: "Met aandacht voor ritme, wensen en energie van senioren en mantelzorgers zorg ik voor rust en een schone leefomgeving.",
+            details: [
+                "Stofzuigen en dweilen",
+                "Sanitair en keuken reinigen",
                 "Bedden verschonen",
-                "Ramen lappen"
-            ],
-            targetGroup: "Perfect voor ouderen, mensen met een beperking, drukke gezinnen of iedereen die tijdelijk extra hulp nodig heeft.",
-            pgb: "Deze dienst is declarabel via PGB (Persoonsgebonden Budget)."
+                "Ramen lappen binnenzijde",
+                "Afwassen en opruimen"
+            ]
         },
         {
-            title: "Opruimen & structuur",
-            icon: <Package size={40} />,
-            description: "Chaos in huis? Ik help je met opruimen, sorteren en een systeem creëren dat bij jou past.",
+            title: "Mantelzorg Ondersteuning",
+            description: "Ik weet hoe intens mantelzorg kan zijn, ik heb het jarenlang zelf gedaan.",
+            intro: "Daarom bied ik praktische ondersteuning, luisterruimte en neem ik taken over wanneer dat nodig is. Zodat jij ook even kunt ademen.",
             details: [
-                "Kasten en ruimtes organiseren",
-                "Spullen sorteren: bewaren, doneren of weggooien",
-                "Praktische opbergsystemen creëren",
-                "Overzicht en structuur aanbrengen",
-                "Administratie ordenen",
-                "Duurzame oplossingen voor langdurig overzicht"
-            ],
-            targetGroup: "Ideaal voor mensen die overweldigd zijn door rommel, verhuizen, of gewoon een frisse start willen.",
-            pgb: "Opruimen en structuur kan onder bepaalde voorwaarden via PGB gedeclareerd worden."
+                "Ondersteuning bij dagelijkse taken",
+                "Respijtzorg (tijdelijke overname)",
+                "Administratieve ondersteuning",
+                "Begeleiding bij afspraken"
+            ]
         },
         {
-            title: "Verhuisklaar maken",
-            icon: <Truck size={40} />,
-            description: "Een verhuizing kan overweldigend zijn. Ik pak in, regel en zorg dat alles soepel verloopt.",
+            title: "Opruimen & Structuur",
+            description: "Rust in huis = rust in je hoofd.",
+            intro: "Ik help met sorteren, ordenen, minimaliseren en het creëren van overzicht voor senioren en mantelzorgers.",
             details: [
-                "Inpakken van alle spullen met zorg",
-                "Labelen van dozen voor overzicht",
-                "Coördinatie met verhuisbedrijf",
-                "Uitpakken op de nieuwe locatie",
-                "Inrichten en organiseren van de nieuwe woning",
-                "Afvoeren van overtollige spullen"
-            ],
-            targetGroup: "Voor ouderen die verhuizen naar een kleinere woning, gezinnen in transitie, of iedereen die verhuisstress wil vermijden.",
-            pgb: "Verhuishulp kan in sommige gevallen via PGB vergoed worden, afhankelijk van je indicatie."
+                "Kasten en kamers uitzoeken",
+                "Systemen creëren voor post en administratie",
+                "Keuzes maken: bewaren, weggeven of wegdoen",
+                "Overzicht terugbrengen in chaos"
+            ]
         },
         {
-            title: "Vervuilde woningen reinigen",
-            icon: <Sparkles size={40} />,
-            description: "Ook bij ernstige vervuiling pak ik het aan – zonder oordeel, met respect en professionaliteit.",
+            title: "Verhuisklaar Maken",
+            description: "Voor ouderen die naar een zorginstelling verhuizen, of woningen die netjes moeten worden opgeleverd.",
+            intro: "Ik regel alles: van opruimen tot schoonmaak.",
             details: [
-                "Grondige reiniging van alle ruimtes",
-                "Desinfectie en sanitaire voorzieningen",
-                "Afvalverwerking en opruimen",
-                "Herstel van leefbaarheid",
-                "Samenwerking met specialisten indien nodig",
-                "Nazorg en onderhoud"
-            ],
-            targetGroup: "Voor mensen in een moeilijke levensfase, met psychische problemen, of naasten die ondersteuning zoeken.",
-            pgb: "Deze intensieve zorg kan vaak via PGB gedeclareerd worden. Neem contact op voor meer informatie."
+                "Inpakken van eigendommen",
+                "Sorteren voor verhuizing of afvoer",
+                "Schoonmaak na ontruiming",
+                "Coördinatie op de verhuisdag"
+            ]
         },
         {
-            title: "Mantelzorg-ondersteuning",
-            icon: <Heart size={40} />,
-            description: "Zorg jij voor een naaste? Ik ondersteun jou, zodat je even kunt ademhalen.",
+            title: "Vervuilde Woningen Reinigen",
+            description: "(Particulier én voor makelaars/woningbouw)",
+            intro: "Respectvol, discreet en professioneel. Ik pak ernstige vervuiling aan met structuur en kalmte en zonder oordeel.",
             details: [
-                "Respijtzorg: ik neem tijdelijk over",
-                "Praktische ondersteuning in het huishouden",
-                "Administratieve hulp (zorgaanvragen, declaraties)",
-                "Begeleiding bij afspraken",
-                "Emotionele steun en een luisterend oor",
-                "Advies over beschikbare zorgvoorzieningen"
-            ],
-            targetGroup: "Voor mantelzorgers die overbelast zijn, even willen ontspannen, of praktische hulp nodig hebben.",
-            pgb: "Respijtzorg en mantelzorgondersteuning zijn vaak via PGB te declareren."
+                "Grondige dieptereiniging",
+                "Afvalverwijdering",
+                "Desinfectie van sanitaire ruimtes",
+                "Leefbaar en toonbaar maken van de woning"
+            ]
         }
     ];
 
@@ -109,17 +104,25 @@ const Diensten = () => {
                                     </h2>
                                 </div>
                                 <div className="md:col-span-2">
-                                    <p className="text-lg text-dark-contrast/80 mb-6">
+                                    <p className="text-xl text-dark-contrast font-serif italic mb-4">
                                         {service.description}
                                     </p>
-                                    <ul className="space-y-2">
-                                        {service.details.slice(0, 4).map((detail, idx) => ( // Show first 4
-                                            <li key={idx} className="flex items-center">
-                                                <span className="w-2 h-2 rounded-full bg-gold mr-3 flex-shrink-0 mt-2"></span>
-                                                <span className="text-dark-contrast/70">{detail}</span>
+                                    <p className="text-lg text-dark-contrast/80 mb-6 leading-relaxed">
+                                        {service.intro}
+                                    </p>
+                                    <ul className="space-y-4 mb-8">
+                                        {service.details.map((detail, idx) => (
+                                            <li key={idx} className="flex items-start">
+                                                <span className="w-2 h-2 rounded-full bg-gold mr-4 flex-shrink-0 mt-2.5"></span>
+                                                <span className="text-dark-contrast/70 text-lg">{detail}</span>
                                             </li>
                                         ))}
                                     </ul>
+                                    {service.footer && (
+                                        <p className="text-lg font-serif italic text-gold mt-6 border-t border-gold/20 pt-4">
+                                            {service.footer}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         ))}

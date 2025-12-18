@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Home as HomeIcon, Package, Truck, Heart, Sparkles } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import ReviewCarousel from '../components/ReviewCarousel';
@@ -11,34 +10,28 @@ const Home = () => {
 
     const services = [
         {
-            title: "Huishoudelijke ondersteuning",
-            description: "Van stofzuigen tot boodschappen doen – ik neem de dagelijkse taken over zodat jij kunt uitrusten.",
-            icon: <HomeIcon size={28} strokeWidth={1} />,
+            title: "Gezelschap & Aandacht",
+            description: "Een fijn praatje, een wandeling of samen een kopje koffie. Persoonlijke aandacht zonder haast.",
         },
         {
-            title: "Opruimen & structuur",
-            description: "Chaos in huis? Ik help je met opruimen, sorteren en een systeem creëren dat bij jou past.",
-            icon: <Package size={28} strokeWidth={1} />,
+            title: "Huishoudelijke ondersteuning",
+            description: "Van basis opfrisbeurt tot grondige schoonmaak. Rust en een schone leefomgeving.",
+        },
+        {
+            title: "Mantelzorg ondersteuning",
+            description: "Praktische hulp en luisterruimte voor mantelzorgers, zodat jij ook even kunt ademhalen.",
+        },
+        {
+            title: "Opruimen & Structuur",
+            description: "Rust in huis is rust in je hoofd. Ik help met sorteren, ordenen en overzicht creëren.",
         },
         {
             title: "Verhuisklaar maken",
-            description: "Een verhuizing kan overweldigend zijn. Ik pak in, regel en zorg dat alles soepel verloopt.",
-            icon: <Truck size={28} strokeWidth={1} />,
+            description: "Hulp bij verhuizing naar een zorginstelling of het netjes opleveren van een woning.",
         },
         {
             title: "Vervuilde woningen reinigen",
-            description: "Ook bij ernstige vervuiling pak ik het aan – zonder oordeel, met respect en professionaliteit.",
-            icon: <Sparkles size={28} strokeWidth={1} />,
-        },
-        {
-            title: "Mantelzorg-ondersteuning",
-            description: "Zorg jij voor een naaste? Ik ondersteun jou, zodat je even kunt ademhalen.",
-            icon: <Heart size={28} strokeWidth={1} />,
-        },
-        {
-            title: "Gezelschap & Aandacht",
-            description: "Een luisterend oor, een wandeling of samen een kopje koffie. Persoonlijke aandacht staat voorop.",
-            icon: <Heart size={28} strokeWidth={1} />,
+            description: "Respectvolle en discrete aanpak van ernstige vervuiling, met structuur en kalmte.",
         },
     ];
 

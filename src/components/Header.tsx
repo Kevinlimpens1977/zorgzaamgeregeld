@@ -13,7 +13,6 @@ const Header = () => {
         { name: 'Diensten', path: '/diensten' },
         { name: 'Zorgcheck', path: '/zorgcheck' },
         { name: 'Tarieven', path: '/tarieven' },
-        { name: 'Vergoeding', path: '/vergoeding' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -38,15 +37,15 @@ const Header = () => {
                         <li key={item.path}>
                             <Link
                                 to={item.path}
-                                className={`uppercase tracking-widest text-sm font-bold transition-colors duration-300 block py-1
+                                className={`uppercase tracking-widest text-sm font-bold transition-colors duration-300 flex items-center justify-end py-1
                                     ${isActive(item.path)
                                         ? 'text-title'
                                         : 'text-gold/80 hover:text-title'
                                     }`}
                             >
-                                <span className="inline-block w-4 text-right mr-2 font-serif text-gold">
-                                    {isActive(item.path) ? '»' : ''}
-                                </span>
+                                {isActive(item.path) && (
+                                    <span className="w-1.5 h-1.5 rounded-full bg-gold mr-3"></span>
+                                )}
                                 {item.name}
                             </Link>
                         </li>
@@ -76,10 +75,12 @@ const Header = () => {
                             <Link
                                 to={item.path}
                                 onClick={() => setIsMenuOpen(false)}
-                                className={`text-2xl font-serif block transition-colors duration-300
+                                className={`text-2xl font-serif flex items-center justify-center transition-colors duration-300
                                     ${isActive(item.path) ? 'text-gold italic' : 'text-title'}`}
                             >
-                                {isActive(item.path) && <span className="mr-2">»</span>}
+                                {isActive(item.path) && (
+                                    <span className="w-2 h-2 rounded-full bg-gold mr-4"></span>
+                                )}
                                 {item.name}
                             </Link>
                         </li>

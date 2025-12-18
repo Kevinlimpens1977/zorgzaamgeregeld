@@ -23,7 +23,6 @@ const Footer = () => {
                             { name: 'DIENSTEN', path: '/diensten' },
                             { name: 'ZORGCHECK', path: '/zorgcheck' },
                             { name: 'TARIEVEN', path: '/tarieven' },
-                            { name: 'VERGOEDINGEN', path: '/vergoedingen' },
                             { name: 'CONTACT', path: '/contact' },
                         ].map((item) => (
                             <Link
@@ -62,7 +61,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="border-t border-taupe/30 pt-10 text-center">
                     <p className="font-sans text-title/70 text-sm">
-                        &copy; {new Date().getFullYear()} Zorgzaam Geregeld · <Link to="/privacy" className="hover:text-title">Privacybeleid</Link> · <Link to="/voorwaarden" className="hover:text-title">Algemene Voorwaarden</Link>
+                        &copy; {new Date().getFullYear()} Zorgzaam Geregeld · <Link to="/privacy" className="hover:text-title">Privacyverklaring</Link> · <Link to="/klachten" className="hover:text-title">Klachtenregeling</Link>
                     </p>
                 </div>
             </div>
