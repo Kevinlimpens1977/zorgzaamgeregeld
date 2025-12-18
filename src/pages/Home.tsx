@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import ReviewCarousel from '../components/ReviewCarousel';
 import { useState } from 'react';
-import daanImage from '../assets/danielle.jpg';
 
 const Home = () => {
     const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -101,7 +100,7 @@ const Home = () => {
                             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-[1px] border-gold p-3 relative">
                                 <div className="w-full h-full rounded-full overflow-hidden shadow-2xl">
                                     <img
-                                        src={daanImage}
+                                        src="https://igpfvcihykgouwiulxwn.supabase.co/storage/v1/object/sign/zorgzaamgeregeld/daan.JPEG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNzVmMzliZS03OGY3LTRkNjQtYWMxZC02NzA5MTY2ZTJiYzEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ6b3JnemFhbWdlcmVnZWxkL2RhYW4uSlBFRyIsImlhdCI6MTc2NjA5NDk2OCwiZXhwIjoxOTIzNzc0OTY4fQ.SfEZfEqkE-iF6lvxtrDQPHDi3RKT5VTdQqDw3LNCiLs"
                                         alt="Danielle"
                                         className="w-full h-full object-cover grayscale transition-transform duration-700 hover:scale-110"
                                     />
