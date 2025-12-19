@@ -30,7 +30,7 @@ const Tarieven = () => {
                                     Voor particuliere ondersteuning werk ik met een helder uurtarief. Perfect voor opruimen, structuur, huishouden, dagelijkse ondersteuning of een steuntje in de rug.
                                 </p>
                                 <div className="text-3xl md:text-4xl font-serif text-bronze mb-6">
-                                    Uurtarief Particulieren: € 35,- <span className="text-lg text-text/60 font-sans uppercase tracking-tighter italic">per uur (btw-vrijgesteld)</span>
+                                    Uurtarief Particulieren: € 39,- <span className="text-lg text-text/60 font-sans uppercase tracking-tighter italic">per uur (btw-vrijgesteld)</span>
                                 </div>
                                 <p className="text-xl font-serif italic text-gold-dark">
                                     "Ik werk zorgvuldig, warm én met humor, zodat jouw huis én hoofd snel weer licht voelen."
@@ -38,55 +38,27 @@ const Tarieven = () => {
                             </div>
                         </div>
 
-                        {/* 2. STRIPPENKAARTEN & PAKKETTEN */}
+                        {/* 2. STRIPPENKAARTEN */}
                         <div className="space-y-8">
                             <div className="flex items-center gap-4">
                                 <div className="w-8 h-[1px] bg-gold"></div>
-                                <h2 className="text-3xl md:text-4xl font-serif text-title uppercase tracking-wider">2. Strippenkaarten & Pakketten</h2>
+                                <h2 className="text-3xl md:text-4xl font-serif text-title uppercase tracking-wider">2. Strippenkaarten</h2>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="max-w-2xl">
                                 <div className="bg-white p-8 shadow-soft border border-surface">
                                     <h3 className="text-2xl font-serif text-title mb-4">Strippenkaarten</h3>
                                     <p className="text-text/70 mb-6 italic">Wanneer je geen vaste momenten kunt of wilt afspreken. Een strippenkaart is 1 jaar geldig.</p>
                                     <ul className="space-y-4 text-lg">
                                         <li className="flex justify-between items-center border-b border-surface pb-2">
                                             <span>Strippenkaart 10 uur</span>
-                                            <span className="font-bold text-bronze">€ 380,-</span>
+                                            <span className="font-bold text-bronze">€ 390,-</span>
                                         </li>
                                         <li className="flex justify-between items-center border-b border-surface pb-2">
                                             <span>Strippenkaart 20 uur</span>
-                                            <span className="font-bold text-bronze">€ 740,-</span>
+                                            <span className="font-bold text-bronze">€ 780,-</span>
                                         </li>
                                     </ul>
                                     <p className="mt-4 text-sm text-text/60 uppercase tracking-widest">Flexibel inzetbaar voor alle diensten.</p>
-                                </div>
-
-                                <div className="bg-white p-8 shadow-soft border border-surface">
-                                    <h3 className="text-2xl font-serif text-title mb-4">Wekelijkse Pakketten</h3>
-                                    <ul className="space-y-4 text-lg">
-                                        <li className="flex justify-between items-start border-b border-surface pb-2">
-                                            <div>
-                                                <span className="block font-medium">Rust in Huis</span>
-                                                <span className="text-sm text-text/60">3 uur / week</span>
-                                            </div>
-                                            <span className="font-bold text-bronze">€ 110,-</span>
-                                        </li>
-                                        <li className="flex justify-between items-start border-b border-surface pb-2">
-                                            <div>
-                                                <span className="block font-medium">Volledige Ontzorging</span>
-                                                <span className="text-sm text-text/60">6 uur / week</span>
-                                            </div>
-                                            <span className="font-bold text-bronze">€ 220,-</span>
-                                        </li>
-                                        <li className="flex justify-between items-start border-b border-surface pb-2">
-                                            <div>
-                                                <span className="block font-medium">Intensieve Ondersteuning</span>
-                                                <span className="text-sm text-text/60">10 uur / week</span>
-                                            </div>
-                                            <span className="font-bold text-bronze">€ 375,-</span>
-                                        </li>
-                                    </ul>
-                                    <p className="mt-4 text-sm font-serif italic text-gold">Maatwerkpakket? Zelf samenstellen is altijd mogelijk.</p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +113,7 @@ const Tarieven = () => {
                                     <ul className="space-y-4 opacity-90">
                                         <li className="flex justify-between">
                                             <span>Uurtarief Zakelijk</span>
-                                            <span className="font-bold">€ 45,- (excl. btw)</span>
+                                            <span className="font-bold">€ 49,- (excl. btw)</span>
                                         </li>
                                         <li className="flex justify-between">
                                             <span>Spoedtoeslag</span>
