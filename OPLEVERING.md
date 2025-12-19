@@ -1,49 +1,34 @@
-# Oplevering Zorgzaam Geregeld
+# Handleiding: Uploaden naar TransIP
 
-## Status Project
-**Datum:** 27 november 2025
-**Status:** One-Page Website Geïmplementeerd & Klaar voor Review
+Gefeliciteerd! De website is klaar voor productie. Volg de onderstaande stappen om de site live te zetten via de TransIP File Manager.
 
-## Uitgevoerde Werkzaamheden
-De website is volledig getransformeerd naar een moderne, luxe **one-page scrolling website**. Alle content staat nu op één lange, vloeiende pagina met een premium uitstraling.
+## 1. Wat moet je uploaden?
+Je moet de INHOUD van de map `dist` uploaden naar de hoofdmap (vaak `www` of `public_html`) op je TransIP hosting.
 
-### 1. One-Page Structuur
-- **Alles-in-één:** De pagina's Home, Over Mij, Diensten, Aanpak (Quiz), Tarieven en Contact zijn nu secties onder elkaar.
-- **Sectie-indeling:**
-  - `#home`: Hero, introductie en samenvatting.
-  - `#over-mij`: Persoonlijk verhaal en kernwaarden.
-  - `#diensten`: Gedetailleerd overzicht van alle diensten.
-  - `#aanpak`: De interactieve quiz ("Welke ondersteuning past bij jou?").
-  - `#tarieven`: Prijzen en pakketten.
-  - `#vergoedingen`: Uitgebreide info over Wmo, PGB, Particulier en Belastingdienst.
-  - `#contact`: Contactgegevens en uitleg over de werkwijze.
+**De belangrijkste bestanden in `dist` zijn:**
+- `assets/` (map met alle vormgeving en logica)
+- `api/` (map met de e-mail functionaliteit)
+- `index.html` (het startpunt van de site)
+- `.htaccess` (voor de juiste paden en e-mail ondersteuning)
 
-### 2. Premium Navigatie
-- **Sticky Header:** De navigatiebalk blijft altijd bovenaan zichtbaar tijdens het scrollen.
-- **Smooth Scrolling:** Klikken op een knop scrolt vloeiend naar de juiste sectie.
-- **Luxe Design:**
-  - Knoppen met een subtiel "tile effect" en glans-animatie.
-  - Actieve sectie wordt automatisch gemarkeerd.
-  - Mobiel menu is volledig vernieuwd met een elegante uitklap-animatie.
+## 2. Stappenplan File Manager
+1. Log in op je TransIP controlepaneel.
+2. Ga naar 'Webhosting' en open de **File Manager**.
+3. Navigeer naar de map waar de site moet komen (bijv. de `www` map).
+4. Verwijder eventuele oude bestanden (maak eerst een backup als dat nodig is).
+5. Upload alle bestanden en mappen **die in de `dist` map staan**. 
+   *Tip: Je kunt de inhoud van `dist` zippen, de zip uploaden en dan in de File Manager 'Extract' kiezen.*
 
-### 3. Styling & Beleving
-- **Ruimtelijk Ontwerp:** Meer witruimte en grotere marges voor een rustige, luxe uitstraling.
-- **Animaties:** Subtiele fade-ins bij het laden en interactieve hover-effecten.
-- **Typografie & Kleur:** Strikt gebruik van het premium kleurenpalet (Cacao, Sandstone, Soft Gold) en lettertypes.
+## 3. PHPMailer (Cruciaal voor de Mail-functie)
+Het e-mail script zoekt naar PHPMailer om de mails veilig via SMTP te versturen.
+1. Download PHPMailer (of ik kan je helpen de juiste bestanden klaar te zetten).
+2. Zorg dat er een map genaamd `vendor` of `PHPMailer` in de hoofdmap van je site staat.
+3. Als je PHPMailer handmatig uploadt, plaats deze dan in: `public_html/api/PHPMailer/`
 
-## Volgende Stappen voor de Gebruiker
+## 4. Controleren
+Zodra de bestanden op de server staan:
+1. Ga naar je domeinnaam (bijv. `https://zorgzaamgeregeld.nl`).
+2. Test de Zorgcheck en de "Mail me de uitslag" knop.
+3. Werkt het niet? Controleer de 'Error log' in je TransIP paneel of neem contact met mij op.
 
-1. **Lokale Review:**
-   - Start de ontwikkelserver: `npm run dev`
-   - Bekijk de website op `http://localhost:5173`
-   - Test de navigatie: klik op alle knoppen en controleer of het scrollen soepel verloopt.
-   - Controleer op mobiel of het menu goed werkt.
-
-2. **Content Check:**
-   - Omdat alle tekst nu op één pagina staat, controleer of de volgorde logisch aanvoelt.
-   - Kijk of er geen dubbele informatie te dicht bij elkaar staat (bijv. CTA's).
-
-3. **Deployment:**
-   - Volg de instructies in `DEPLOYMENT.md` om de nieuwe one-page versie online te zetten.
-
-Geniet van het resultaat!
+**Succes met de lancering!**
