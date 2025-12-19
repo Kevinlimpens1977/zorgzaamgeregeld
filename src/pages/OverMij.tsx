@@ -6,7 +6,7 @@ const OverMij = () => {
             {/* Header Section */}
             <header className="pt-40 pb-20 text-center">
                 <div className="container-custom">
-                    <h1 className="text-5xl md:text-6xl font-serif text-dark-contrast">
+                    <h1 className="text-5xl md:text-6xl font-serif text-title">
                         Over Mij
                     </h1>
                 </div>
@@ -17,10 +17,10 @@ const OverMij = () => {
                 <div className="container-custom">
                     <div className="max-w-4xl mx-auto">
                         <div className="prose prose-xl max-w-none">
-                            <h2 className="text-4xl font-serif text-dark-contrast mb-6">
+                            <h2 className="text-4xl font-serif text-title mb-6">
                                 Gedreven door ervaring, met een hart voor zorg.
                             </h2>
-                            <div className="text-dark-contrast/80 space-y-4">
+                            <div className="text-text space-y-4">
                                 <p>
                                     Mijn naam is Daniëlle Sleijser. Ik ben zelf 7 jaar lang mantelzorger geweest voor mijn vader. Een prachtige, maar soms ook overweldigende periode. Ik probeerde elke dag weer de balans te vinden tussen liefde, verantwoordelijkheid, vermoeidheid en de wens om alles zo goed mogelijk te doen.
                                 </p>
@@ -68,10 +68,10 @@ const OverMij = () => {
             </section>
 
             {/* Core Values Section */}
-            <section className="py-24 bg-light-gray/30">
+            <section className="py-24 bg-surface/50">
                 <div className="container-custom">
                     <div className="max-w-3xl mx-auto text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast">
+                        <h2 className="text-4xl md:text-5xl font-serif text-title">
                             Mijn Kernwaarden
                         </h2>
                     </div>
@@ -80,34 +80,34 @@ const OverMij = () => {
                             <div className="mb-5">
                                 <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                             </div>
-                            <h3 className="text-2xl font-serif text-dark-contrast mb-2">Warmte</h3>
-                            <p className="text-dark-contrast/70">Oprechte aandacht en een luisterend oor staan centraal.</p>
+                            <h3 className="text-2xl font-serif text-title mb-2">Warmte</h3>
+                            <p className="text-text/80">Oprechte aandacht en een luisterend oor staan centraal.</p>
                         </div>
                         <div className="text-center">
                             <div className="mb-5">
                                 <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                             </div>
-                            <h3 className="text-2xl font-serif text-dark-contrast mb-2">Betrouwbaarheid</h3>
-                            <p className="text-dark-contrast/70">Afspraak is afspraak. Je kunt op mij rekenen.</p>
+                            <h3 className="text-2xl font-serif text-title mb-2">Betrouwbaarheid</h3>
+                            <p className="text-text/80">Afspraak is afspraak. Je kunt op mij rekenen.</p>
                         </div>
                         <div className="text-center">
                             <div className="mb-5">
                                 <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                             </div>
-                            <h3 className="text-2xl font-serif text-dark-contrast mb-2">Professionaliteit</h3>
-                            <p className="text-dark-contrast/70">Ervaren, kundig en altijd met het grootste respect voor jouw privacy.</p>
+                            <h3 className="text-2xl font-serif text-title mb-2">Professionaliteit</h3>
+                            <p className="text-text/80">Ervaren, kundig en altijd met het grootste respect voor jouw privacy.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-cream-bg">
+            <section className="section-padding bg-base">
                 <div className="container-custom text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
+                    <h2 className="text-4xl md:text-5xl font-serif text-title mb-6">
                         Ben je klaar voor rust en overzicht?
                     </h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto text-dark-contrast/80">
+                    <p className="text-xl mb-8 max-w-2xl mx-auto text-text">
                         Ik nodig je uit voor een vrijblijvend gesprek. Laten we samen ontdekken hoe ik jou het beste kan ondersteunen.
                     </p>
                     <Link to="/contact" className="btn-primary">

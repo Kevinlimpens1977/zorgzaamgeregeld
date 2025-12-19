@@ -11,11 +11,11 @@ const GlobalBackground = () => {
             ></div>
 
             {/* Overlays */}
-            {/* 1. Base overlay - Lower opacity on mobile as requested (0.10-0.15) */}
-            <div className="absolute inset-0 bg-chocolate md:bg-[#F7F4F2] opacity-15 md:opacity-65"></div>
+            {/* 1. Base overlay - Higher opacity on mobile for readability (85-90%) */}
+            <div className="absolute inset-0 bg-base md:bg-[#F7F4F2] opacity-90 md:opacity-65"></div>
 
             {/* 2. Gradient for text readability at the bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-chocolate md:from-[#F7F4F2] via-transparent to-transparent opacity-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-base md:from-[#F7F4F2] via-transparent to-transparent opacity-50"></div>
         </div>
     );
 };

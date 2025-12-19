@@ -76,21 +76,21 @@ const Diensten = () => {
     ];
 
     return (
-        <div className="bg-cream-bg">
+        <div className="bg-base">
             {/* Header Section */}
             <header className="pt-40 pb-20 text-center">
                 <div className="container-custom">
-                    <h1 className="text-5xl md:text-6xl font-serif text-dark-contrast mb-4">
+                    <h1 className="text-5xl md:text-6xl font-serif text-title mb-4">
                         Mijn Diensten
                     </h1>
-                    <p className="text-xl text-dark-contrast/80 max-w-3xl mx-auto">
+                    <p className="text-xl text-text max-w-3xl mx-auto">
                         Flexibele, professionele ondersteuning, volledig afgestemd op jouw persoonlijke behoeften.
                     </p>
                 </div>
             </header>
 
             {/* Services List Section */}
-            <section className="section-padding bg-light-gray/30">
+            <section className="section-padding bg-surface/50">
                 <div className="container-custom">
                     <div className="space-y-20">
                         {services.map((service, index) => (
@@ -99,22 +99,22 @@ const Diensten = () => {
                                     <div className="mb-5">
                                         <div className="w-3 h-3 rounded-full bg-gold inline-block"></div>
                                     </div>
-                                    <h2 className="text-3xl font-serif text-dark-contrast">
+                                    <h2 className="text-3xl font-serif text-title">
                                         {service.title}
                                     </h2>
                                 </div>
                                 <div className="md:col-span-2">
-                                    <p className="text-xl text-dark-contrast font-serif italic mb-4">
+                                    <p className="text-xl text-title font-serif italic mb-4">
                                         {service.description}
                                     </p>
-                                    <p className="text-lg text-dark-contrast/80 mb-6 leading-relaxed">
+                                    <p className="text-lg text-text mb-6 leading-relaxed">
                                         {service.intro}
                                     </p>
                                     <ul className="space-y-4 mb-8">
                                         {service.details.map((detail, idx) => (
                                             <li key={idx} className="flex items-start">
                                                 <span className="w-2 h-2 rounded-full bg-gold mr-4 flex-shrink-0 mt-2.5"></span>
-                                                <span className="text-dark-contrast/70 text-lg">{detail}</span>
+                                                <span className="text-text/80 text-lg">{detail}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -131,15 +131,15 @@ const Diensten = () => {
             </section>
 
             {/* PGB Info Section */}
-            <section className="section-padding bg-cream-bg">
+            <section className="section-padding bg-base">
                 <div className="container-custom max-w-4xl text-center">
                     <div className="mb-5">
                         <div className="w-4 h-4 rounded-full bg-gold inline-block"></div>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
+                    <h2 className="text-4xl md:text-5xl font-serif text-title mb-6">
                         Financiering via PGB
                     </h2>
-                    <div className="prose prose-lg mx-auto text-dark-contrast/80">
+                    <div className="prose prose-lg mx-auto text-text">
                         <p>
                             Veel van mijn diensten kunnen worden gefinancierd vanuit een Persoonsgebonden Budget (PGB). Dit biedt je de vrijheid om zelf jouw zorgverlener te kiezen.
                         </p>
@@ -151,12 +151,12 @@ const Diensten = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-light-gray/30">
+            <section className="section-padding bg-surface/50">
                 <div className="container-custom text-center">
-                    <h2 className="text-4xl md:text-5xl font-serif text-dark-contrast mb-6">
+                    <h2 className="text-4xl md:text-5xl font-serif text-title mb-6">
                         Welke dienst past bij jou?
                     </h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto text-dark-contrast/80">
+                    <p className="text-xl mb-8 max-w-2xl mx-auto text-text">
                         Iedere situatie is uniek. Laten we vrijblijvend jouw wensen bespreken en de perfecte oplossing vinden.
                     </p>
                     <Link to="/contact" className="btn-primary">
