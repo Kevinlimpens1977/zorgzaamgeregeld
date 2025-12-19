@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import QuizCard from '../components/QuizCard';
 import { QUIZ_CONFIG } from '../data/quizConfig';
 import { contentLibrary } from '../data/contentLibrary';
@@ -274,9 +274,8 @@ const Quiz = () => {
                                     {!showEmailForm && emailStatus !== 'success' ? (
                                         <button
                                             onClick={() => setShowEmailForm(true)}
-                                            className="inline-flex items-center gap-2 text-gold border-b border-gold pb-1 transition-all duration-300 hover:text-bronze hover:border-bronze font-btn uppercase tracking-widest text-sm font-bold"
+                                            className="text-gold border-b border-gold pb-1 transition-all duration-300 hover:text-bronze hover:border-bronze font-btn uppercase tracking-widest text-sm font-bold"
                                         >
-                                            <Mail size={18} />
                                             Mail me de uitslag
                                         </button>
                                     ) : emailStatus === 'success' ? (
