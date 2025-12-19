@@ -81,9 +81,12 @@ const Quiz = () => {
                     setEmail('');
                 }, 4000);
             } else {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Email error:', errorData);
                 setEmailStatus('error');
             }
         } catch (error) {
+            console.error('Email fetch error:', error);
             setEmailStatus('error');
         }
     };

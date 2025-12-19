@@ -1,13 +1,18 @@
 <?php
 header('Content-Type: application/json');
 
+// Enable error reporting for debugging (disable in production if preferred)
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
 // Get POST data
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 if (!$data || !isset($data['email'])) {
     http_response_code(400);
-    echo json_encode(['error' => 'Geen email adres ontvangen.']);
+    echo json_encode(['error' => 'Geen valide data of email adres ontvangen.', 'received' => $data]);
     exit;
 }
 
@@ -55,30 +60,44 @@ $message .= "</body></html>";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Attempt to load PHPMailer
-// We look in common locations or assume it's installed
-$phpmailer_path = '../vendor/phpmailer/phpmailer/src/';
-if (!file_exists($phpmailer_path . 'PHPMailer.php')) {
-    $phpmailer_path = './PHPMailer/src/'; // Alternative local path
+// Look for PHPMailer in several common locations
+$paths = [
+    '../vendor/autoload.php', // Composer standard
+    './vendor/autoload.php',
+    '../vendor/phpmailer/phpmailer/src/PHPMailer.php',
+    './PHPMailer/src/PHPMailer.php',
+    './api/PHPMailer/src/PHPMailer.php'
+];
+
+$found = false;
+foreach ($paths as $path) {
+    if (file_exists($path)) {
+        if (strpos($path, 'autoload.php') !== false) {
+            require $path;
+        } else {
+            $base = dirname($path) . '/';
+            require $base . 'Exception.php';
+            require $base . 'PHPMailer.php';
+            require $base . 'SMTP.php';
+        }
+        $found = true;
+        break;
+    }
 }
 
-if (file_exists($phpmailer_path . 'PHPMailer.php')) {
-    require $phpmailer_path . 'Exception.php';
-    require $phpmailer_path . 'PHPMailer.php';
-    require $phpmailer_path . 'SMTP.php';
-
+if ($found) {
     $mail = new PHPMailer(true);
 
     try {
         //Server settings
         $mail->isSMTP();
-        $mail->Host       = $smtp_host;
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $smtp_user;
-        $mail->Password   = $smtp_pass;
+        $mail->Host = $smtp_host;
+        $mail->SMTPAuth = true;
+        $mail->Username = $smtp_user;
+        $mail->Password = $smtp_pass;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = $smtp_port;
-        $mail->CharSet    = 'UTF-8';
+        $mail->Port = $smtp_port;
+        $mail->CharSet = 'UTF-8';
 
         //Recipients
         $mail->setFrom($smtp_user, $sender_name);
@@ -88,7 +107,7 @@ if (file_exists($phpmailer_path . 'PHPMailer.php')) {
         //Content
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $message;
+        $mail->Body = $message;
         $mail->AltBody = strip_tags(str_replace(['<p>', '</p>', '<li>'], ["\n", "\n", "\n- "], $message));
 
         $mail->send();
@@ -98,7 +117,11 @@ if (file_exists($phpmailer_path . 'PHPMailer.php')) {
         echo json_encode(['error' => "Mail kon niet worden verzonden. Mailer Error: {$mail->ErrorInfo}"]);
     }
 } else {
-    // Fallback if PHPMailer is missing (attempt mail() but user asked for SMTP)
+    // Fallback if PHPMailer is missing
     http_response_code(500);
-    echo json_encode(['error' => 'PHPMailer bibliotheek niet gevonden op de server.']);
+    echo json_encode([
+        'error' => 'PHPMailer bibliotheek niet gevonden op de server.',
+        'checked_paths' => $paths,
+        'advice' => 'Upload de PHPMailer bibliotheek naar een van de bovenstaande locaties.'
+    ]);
 }
