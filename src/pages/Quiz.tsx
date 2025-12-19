@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Check } from 'lucide-react';
 import QuizCard from '../components/QuizCard';
 import { QUIZ_CONFIG } from '../data/quizConfig';
 import { contentLibrary } from '../data/contentLibrary';
@@ -11,6 +12,11 @@ const Quiz = () => {
     const [answers, setAnswers] = useState<Record<string, "A" | "B" | "C" | "D">>({});
     const [tagIds, setTagIds] = useState<string[]>([]);
     const [showResult, setShowResult] = useState(false);
+
+    // Email feature states
+    const [email, setEmail] = useState('');
+    const [showEmailForm, setShowEmailForm] = useState(false);
+    const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
     const questions = QUIZ_CONFIG.questions;
     const currentQuestion = questions[currentQuestionIndex];
@@ -43,6 +49,42 @@ const Quiz = () => {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             setShowResult(true);
+        }
+    };
+
+    const handleSendEmail = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!email || !storyData) return;
+
+        setEmailStatus('sending');
+
+        try {
+            const response = await fetch('/api/send-zorgcheck.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    profile: storyData.profile.title,
+                    paragraphs: storyData.paragraphs,
+                    bullets: storyData.bullets,
+                    closing: storyData.closing
+                }),
+            });
+
+            if (response.ok) {
+                setEmailStatus('success');
+                setTimeout(() => {
+                    setShowEmailForm(false);
+                    setEmailStatus('idle');
+                    setEmail('');
+                }, 4000);
+            } else {
+                setEmailStatus('error');
+            }
+        } catch (error) {
+            setEmailStatus('error');
         }
     };
 
@@ -226,6 +268,55 @@ const Quiz = () => {
                                         Bekijk tarieven
                                     </Link>
                                 </div>
+
+                                {/* Email Feature */}
+                                <div className="mt-10 pt-8 border-t border-surface">
+                                    {!showEmailForm && emailStatus !== 'success' ? (
+                                        <button
+                                            onClick={() => setShowEmailForm(true)}
+                                            className="inline-flex items-center gap-2 text-gold border-b border-gold pb-1 transition-all duration-300 hover:text-bronze hover:border-bronze font-btn uppercase tracking-widest text-sm font-bold"
+                                        >
+                                            <Mail size={18} />
+                                            Mail me de uitslag
+                                        </button>
+                                    ) : emailStatus === 'success' ? (
+                                        <div className="text-gold-dark flex items-center justify-center gap-2 font-light">
+                                            <Check size={20} className="text-gold" />
+                                            De uitslag is naar je gemaild.
+                                        </div>
+                                    ) : (
+                                        <form onSubmit={handleSendEmail} className="max-w-md mx-auto space-y-4 animate-fadeIn">
+                                            <div className="flex flex-col space-y-2">
+                                                <div className="flex gap-2">
+                                                    <input
+                                                        type="email"
+                                                        value={email}
+                                                        onChange={(e) => setEmail(e.target.value)}
+                                                        placeholder="Je e-mailadres"
+                                                        required
+                                                        className="flex-grow px-4 py-3 border border-surface rounded-none focus:outline-none focus:border-gold font-light"
+                                                    />
+                                                    <button
+                                                        type="submit"
+                                                        disabled={emailStatus === 'sending'}
+                                                        className="bg-gold text-white px-6 py-3 uppercase tracking-widest text-xs font-bold hover:bg-gold-dark transition-colors disabled:opacity-50"
+                                                    >
+                                                        {emailStatus === 'sending' ? 'Sending...' : 'Mailen'}
+                                                    </button>
+                                                </div>
+                                                <p className="text-xs text-text/60 italic text-left">
+                                                    Je e-mailadres wordt alleen gebruikt om deze uitslag te mailen.
+                                                </p>
+                                                {emailStatus === 'error' && (
+                                                    <p className="text-xs text-red-500 text-left">
+                                                        Er ging iets mis. Probeer het later opnieuw.
+                                                    </p>
+                                                )}
+                                            </div>
+                                        </form>
+                                    )}
+                                </div>
+
                                 <div className="mt-8 pt-6 border-t border-surface">
                                     <button
                                         onClick={() => {
